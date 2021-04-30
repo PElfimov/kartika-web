@@ -1,0 +1,15 @@
+.wrapper {
+    display: grid;
+    grid-template-columns: 72px minmax(100px, 238px) 1fr;
+    grid-template-rows: 100vh;
+}
+
+.header {
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.main {
+    overflow: hidden;
+    overflow-y: auto;
+}
