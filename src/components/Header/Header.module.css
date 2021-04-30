@@ -1,18 +1,18 @@
-.main-header__inner {
+.inner {
     display: flex;
     width: 960px;
     margin: 0 auto;
 }
-.main-header__contact {
+.contact {
     margin-left: auto;
 }
 
-.main-header__contact p {
+.contact p {
     margin: 0;
     padding: 0;
 }
 
-.main-header__contact-phonenomber {
+.phoneNumber {
     display: block;
     padding-top: 19px;
     line-height: 32px;
@@ -24,10 +24,41 @@
     text-decoration: none;
 }
 
-.main-header__contact-text {
+.contactText {
     line-height: 19px;
     color: #7f7f7f;
     font-size: 16px;
     text-align: right;
     font-weight: 400;
+}
+
+.logo {
+    margin-top: 10px;
+}
+
+.logo h1 {
+    margin: 0;
+    padding: 0;
+}
+
+.logoText {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    width: 1px;
+    margin: -1px;
+    padding: 0;
+    border: 0;
+}
+
+.tagline {
+    margin: 0;
+    padding: 0;
+    margin-top: 4px;
+    color: #00a1e6;
+    font-size: 21px;
+    line-height: 25px;
+    font-weight: 700;
+    text-transform: uppercase;
 }

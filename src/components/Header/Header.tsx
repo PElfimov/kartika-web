@@ -1,18 +1,19 @@
 import {Component} from "react"
 import styles from "./Header.module.css"
+import {Btn} from "./parts/btn/btn"
 
 interface Props {}
 export class Header extends Component<Props, {}> {
     public render() {
         return (
-            <header className={styles.header}>
-                <div className="main-header__inner">
-                    <section className="header-logo main-header__logo ">
+            <header>
+                <div className={styles.inner}>
+                    <section className={styles.logo}>
                         <h1>
-                            <span className="header-logo__logo-text">
+                            <span className={styles.logoText}>
                                 Типография "Картика"<br></br>{" "}
                             </span>
-                            <a className="header-logo">
+                            <a>
                                 <img
                                     src="img/karticalogo.png"
                                     width="274"
@@ -21,19 +22,17 @@ export class Header extends Component<Props, {}> {
                                 />
                             </a>
                         </h1>
-                        <p className="header-logo__tagline">Производство пластиковых карт для вашего бизнеса</p>
+                        <p className={styles.tagline}>Производство пластиковых карт для вашего бизнеса</p>
                     </section>
-                    <section className="main-header__contact">
+                    <section className={styles.contact}>
                         <p>
-                            <a className="main-header__contact-phonenomber" href="tel:+73852226824">
+                            <a className={styles.phoneNumber} href="tel:+73852226824">
                                 +7 (3852) 226-824
                             </a>
                         </p>
-                        <p className="main-header__contact-text">Ждем ваших звонков!</p>
+                        <p className={styles.contactText}>Ждем ваших звонков!</p>
                         <p>
-                            <a className="btn main-header__contact-btn" href="requestcall.html">
-                                Заказать звонок
-                            </a>
+                            <Btn />
                         </p>
                     </section>
                 </div>
