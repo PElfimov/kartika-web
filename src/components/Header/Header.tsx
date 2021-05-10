@@ -1,4 +1,5 @@
 import {Component} from "react"
+import logo from "./parts/img/karticalogo.png"
 import styles from "./header.module.css"
 import {Btn} from "./parts/btn/btn"
 
@@ -11,10 +12,10 @@ export class Header extends Component<Props, {}> {
           <section className={styles.logo}>
             <h1>
               <span className={styles.logoText}>
-                Типография "Картика"<br></br>{" "}
+                Типография "Картика"<br></br>
               </span>
               <a>
-                <img src="img/karticalogo.png" width="274" height="77" alt="Логотип типографии «Картика»" />
+                <img src={logo} width="274" height="77" alt="Логотип типографии «Картика»" />
               </a>
             </h1>
             <p className={styles.tagline}>Производство пластиковых карт для вашего бизнеса</p>
