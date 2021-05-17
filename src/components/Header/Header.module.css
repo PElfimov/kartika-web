@@ -1,64 +1,64 @@
 .inner {
-    display: flex;
-    width: 960px;
-    margin: 0 auto;
+  display: flex;
+  width: 960px;
+  margin: 0 auto;
 }
 .contact {
-    margin-left: auto;
+  margin-left: auto;
 }
 
 .contact p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .phoneNumber {
-    display: block;
-    padding-top: 19px;
-    line-height: 32px;
-    color: #00a3d0;
-    font-size: 30px;
-    text-align: right;
-    font-family: open-sans, sans-serif;
-    font-weight: 700;
-    text-decoration: none;
+  display: block;
+  padding-top: 19px;
+  line-height: 32px;
+  color: #00a3d0;
+  font-size: 30px;
+  text-align: right;
+  font-family: open-sans, sans-serif;
+  font-weight: 700;
+  text-decoration: none;
 }
 
 .contactText {
-    line-height: 19px;
-    color: #7f7f7f;
-    font-size: 16px;
-    text-align: right;
-    font-weight: 400;
+  line-height: 19px;
+  color: #7f7f7f;
+  font-size: 16px;
+  text-align: right;
+  font-weight: 400;
 }
 
 .logo {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 .logo h1 {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .logoText {
-    position: absolute;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    width: 1px;
-    margin: -1px;
-    padding: 0;
-    border: 0;
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
 }
 
 .tagline {
-    margin: 0;
-    padding: 0;
-    margin-top: 4px;
-    color: #00a1e6;
-    font-size: 21px;
-    line-height: 25px;
-    font-weight: 700;
-    text-transform: uppercase;
+  margin: 0;
+  padding: 0;
+  margin-top: 4px;
+  color: #00a1e6;
+  font-size: 21px;
+  line-height: 25px;
+  font-weight: 700;
+  text-transform: uppercase;
 }
