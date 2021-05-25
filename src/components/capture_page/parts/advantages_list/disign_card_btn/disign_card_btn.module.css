@@ -1,0 +1,36 @@
+.root {
+  margin-top: 76px;
+  display: block;
+  text-decoration: none;
+  font-family: inherit;
+  font-size: inherit;
+  color: #fff;
+  width: 422px;
+  height: 86px;
+  border-radius: 60px;
+  border: solid 3px #fff;
+  background: linear-gradient(to top, #0079bf, #009ece);
+  line-height: 30px;
+  color: #ffffff;
+  font-size: 21px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.root:hover {
+  background: linear-gradient(to top, #0079bf, #0079bf);
+}
+
+.root:active {
+  background: linear-gradient(to top, #009ece, #009ece);
+}
+
+.root span {
+  display: block;
+  line-height: 48px;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 400;
+  padding-right: 2px;
+}
