@@ -1,0 +1,66 @@
+.root {
+  padding: 0;
+  margin: 7px 0 0;
+  padding-top: 47px;
+}
+
+.item {
+  list-style-type: none;
+}
+
+.item a {
+  position: relative;
+  display: block;
+  width: 400px;
+  height: 30px;
+  margin-bottom: 18px;
+  padding: 20px;
+  padding-left: 107px;
+  background: linear-gradient(to right, #ffffff, rgba(255, 255, 255, 0) 100%);
+  text-decoration: none;
+  line-height: 29px;
+  color: #00a1e6;
+  font-size: 24px;
+  text-align: left;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 60px;
+  text-shadow: 1px 1px 3px #fff;
+}
+
+.item a:hover {
+  background: linear-gradient(to right, #feed00, rgba(255, 255, 255, 0) 100%);
+}
+
+.item a:active {
+  background: linear-gradient(to right, #f3ea6d, rgba(255, 255, 255, 0) 100%);
+}
+
+.item a::before {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url(./img/spritesheet.png);
+  background-repeat: no-repeat;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  left: 56px;
+}
+
+.shipping a::before {
+  width: 71px;
+  height: 45px;
+  background-position: -260px -126px;
+}
+
+.indent a::before {
+  width: 60px;
+  height: 60px;
+  background-position: -240px -250px;
+}
+
+.warranty a::before {
+  width: 75px;
+  height: 60px;
+  background-position: -5px -5px;
+}
