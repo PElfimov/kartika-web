@@ -1,0 +1,31 @@
+.root {
+  min-height: 539px;
+  background: #94acb6 url("./parts/img/vydedlksohi.jpg") no-repeat center center;
+  background-size: cover;
+}
+
+.inner {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.textHidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.text {
+  margin: 0;
+  margin-top: 8px;
+  padding-left: 20px;
+  line-height: 22px;
+  color: #00a3d0;
+  font-size: 18px;
+  font-weight: 400;
+}
