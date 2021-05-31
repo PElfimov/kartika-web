@@ -4,6 +4,8 @@ import styles from "./promo_page.module.css"
 
 interface Props {}
 export class PromoPage extends Component<Props, {}> {
+  private timeTo: number = 200000000
+
   render() {
     return (
       <section className={styles.root}>
@@ -15,7 +17,7 @@ export class PromoPage extends Component<Props, {}> {
               при заказе карт вы получите дизайн-макет<span>в подарок</span>
             </p>
           </div>
-          <Timer />
+          <Timer timeTo={this.timeTo} />
         </div>
         <form className="promo-page__form form-capture">
           <fieldset className="form-capture__inner">

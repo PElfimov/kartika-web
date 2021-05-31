@@ -2,11 +2,15 @@ import {Component} from "react"
 import Countdown from "react-countdown"
 import styles from "./timer.module.css"
 
-interface Props {}
+interface Props {
+  timeTo: number
+}
 
 export class Timer extends Component<Props, {}> {
   render() {
-    return <Countdown date={Date.now() + 200000000} renderer={HTML} />
+    const {timeTo} = this.props
+
+    return <Countdown date={Date.now() + timeTo} renderer={HTML} />
   }
 }
 
@@ -17,7 +21,7 @@ type HTMLProps = {
   seconds: number
 }
 
-function HTML({days, hours, minutes, seconds}: {days: number; hours: number; minutes: number; seconds: number}) {
+function HTML({days, hours, minutes, seconds}: HTMLProps) {
   return (
     <div className={styles.root}>
       <div className={styles.photo1}></div>
