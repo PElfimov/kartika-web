@@ -1,3 +1,5 @@
+import {observable} from "mobx"
+import {observer} from "mobx-react"
 import {Component} from "react"
 import Countdown from "react-countdown"
 import styles from "./timer.module.css"
@@ -6,11 +8,39 @@ interface Props {
   timeTo: number
 }
 
+@observer
 export class Timer extends Component<Props, {}> {
+  @observable
+  private currentDate = Date.now()
+
+  @observable
+  private isEndOfTimer: boolean = false
+
   render() {
     const {timeTo} = this.props
 
-    return <Countdown date={Date.now() + timeTo} renderer={HTML} />
+    return (
+      <>
+        <p> {String(this.isEndOfTimer)}</p>
+        <Countdown
+          date={this.currentDate + timeTo}
+          onComplete={() => {
+            console.log("end of timer")
+            console.log("sadsfasfd", this.isEndOfTimer)
+
+            this.isEndOfTimer = true
+          }}
+          renderer={HTML}
+        />
+      </>
+    )
+  }
+
+  componentDidMount() {
+    const a = String(this.currentDate)
+    console.log(this.isEndOfTimer)
+
+    localStorage.setItem("currentDate", a)
   }
 }
 
@@ -19,6 +49,7 @@ type HTMLProps = {
   hours: number
   minutes: number
   seconds: number
+  completed: boolean
 }
 
 function HTML({days, hours, minutes, seconds}: HTMLProps) {
