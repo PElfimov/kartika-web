@@ -5,5 +5,12 @@
     "es6": true,
     "browser": true
   },
-  "rules": {}
+  "rules": {},
+  "parserOptions": {
+    "ecmaFeatures": {
+      "legacyDecorators": true
+    }
+  }
 }
+
+
