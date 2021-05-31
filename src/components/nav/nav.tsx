@@ -5,26 +5,26 @@ interface Props {}
 export class Nav extends Component<Props, {}> {
   render() {
     return (
-      <nav className="main-navigation">
-        <div className="main-navigation__inner">
-          <h3 className="main-navigation__text-hidden">Меню нашего сайта</h3>
-          <ul className="main-navigation__list">
-            <li className="main-navigation__item">
+      <nav className={styles.root}>
+        <div className={styles.inner}>
+          <h3 className={styles.textHidden}>Меню нашего сайта</h3>
+          <ul className={styles.list}>
+            <li className={styles.item}>
               <a href="#promo-page">Акция</a>
             </li>
-            <li className="main-navigation__item">
+            <li className={styles.item}>
               <a href="#portfolio">Портфолио</a>
             </li>
-            <li className="main-navigation__item">
+            <li className={styles.item}>
               <a href="#catalog">Типы продукции</a>
             </li>
-            <li className="main-navigation__item">
+            <li className={styles.item}>
               <a href="#advantages">Преимущества</a>
             </li>
-            <li className="main-navigation__item">
+            <li className={styles.item}>
               <a href="#reviews">Отзывы</a>
             </li>
-            <li className="main-navigation__item">
+            <li className={styles.item}>
               <a href="#request-for-settleme">Заявка на расчет</a>
             </li>
           </ul>
