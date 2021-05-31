@@ -10,9 +10,12 @@ export class Timer extends Component<Props, {}> {
   }
 }
 
-// type HTMLProps = {
-//   days: number; hours: number; minutes: number; seconds: number
-// };
+type HTMLProps = {
+  days: number
+  hours: number
+  minutes: number
+  seconds: number
+}
 
 function HTML({days, hours, minutes, seconds}: {days: number; hours: number; minutes: number; seconds: number}) {
   return (
