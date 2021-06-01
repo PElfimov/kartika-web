@@ -1,4 +1,4 @@
-import {observable} from "mobx"
+import {action, makeObservable, observable} from "mobx"
 import {observer} from "mobx-react"
 import {Component} from "react"
 import Countdown from "react-countdown"
@@ -13,32 +13,24 @@ export class Timer extends Component<Props, {}> {
   @observable
   private currentDate = Date.now()
 
-  @observable
-  private isEndOfTimer: boolean = false
+  constructor(props: any) {
+    super(props)
+    makeObservable(this)
+  }
+
+  @action
+  private onComplete() {
+    this.currentDate = Date.now()
+  }
 
   render() {
     const {timeTo} = this.props
 
-    return (
-      <>
-        <p> {String(this.isEndOfTimer)}</p>
-        <Countdown
-          date={this.currentDate + timeTo}
-          onComplete={() => {
-            console.log("end of timer")
-            console.log("sadsfasfd", this.isEndOfTimer)
-
-            this.isEndOfTimer = true
-          }}
-          renderer={HTML}
-        />
-      </>
-    )
+    return <Countdown date={this.currentDate + timeTo} onComplete={this.onComplete.bind(this)} renderer={HTML} />
   }
 
   componentDidMount() {
     const a = String(this.currentDate)
-    console.log(this.isEndOfTimer)
 
     localStorage.setItem("currentDate", a)
   }
