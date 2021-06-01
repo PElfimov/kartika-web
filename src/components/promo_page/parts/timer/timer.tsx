@@ -29,12 +29,17 @@ export class Timer extends Component<Props, {}> {
   }
 
   get date() {
-    const currentDate = Date.now()
+    const currentDate: number = Date.now()
+    let lastDate: number = 0
     const date = localStorage.getItem("currentDate")
+
     if (date) {
-      this.currentDate = +date
+      lastDate = parseInt(date, 10)
     }
 
+    if (currentDate - lastDate > this.props.timeTo) {
+      this.currentDate = Date.now()
+    } else this.currentDate = lastDate
     return this.currentDate
   }
 
