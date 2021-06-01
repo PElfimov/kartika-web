@@ -13,6 +13,9 @@ export class Timer extends Component<Props, {}> {
   @observable
   private currentDate = Date.now()
 
+  @observable
+  private restartTimer: number = 1
+
   constructor(props: any) {
     super(props)
     makeObservable(this)
@@ -21,18 +24,35 @@ export class Timer extends Component<Props, {}> {
   @action
   private onComplete() {
     this.currentDate = Date.now()
+    this.restartTimer++
+    localStorage.setItem("currentDate", String(this.currentDate))
+  }
+
+  get date() {
+    const currentDate = Date.now()
+    const date = localStorage.getItem("currentDate")
+    if (date) {
+      this.currentDate = +date
+    }
+
+    return this.currentDate
   }
 
   render() {
     const {timeTo} = this.props
 
-    return <Countdown date={this.currentDate + timeTo} onComplete={this.onComplete.bind(this)} renderer={HTML} />
+    return (
+      <Countdown
+        key={this.restartTimer}
+        date={this.date + timeTo}
+        onComplete={this.onComplete.bind(this)}
+        renderer={HTML}
+      />
+    )
   }
 
   componentDidMount() {
-    const a = String(this.currentDate)
-
-    localStorage.setItem("currentDate", a)
+    localStorage.setItem("currentDate", String(this.currentDate))
   }
 }
 

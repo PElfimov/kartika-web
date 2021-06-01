@@ -4,7 +4,7 @@ import styles from "./promo_page.module.css"
 
 interface Props {}
 export class PromoPage extends Component<Props, {}> {
-  private timeTo: number = 5000
+  private timeTo: number = 50000
 
   render() {
     return (
