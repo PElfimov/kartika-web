@@ -70,6 +70,12 @@ type HTMLProps = {
 }
 
 function HTML({days, hours, minutes, seconds}: HTMLProps) {
+  function nameDay() {
+    let line: string = "дня"
+    if (days < 2) line = "день"
+    if (days < 1) line = "дней"
+    return line
+  }
   return (
     <div className={styles.root}>
       <div className={styles.photo1}></div>
@@ -81,7 +87,7 @@ function HTML({days, hours, minutes, seconds}: HTMLProps) {
             <p className={styles.lineUp}>
               <span>{days}</span>
             </p>
-            <p className={styles.lineDown}>дней</p>
+            <p className={styles.lineDown}>{nameDay()}</p>
           </div>
           <div className={styles.clockColon}>:</div>
           <div className={styles.clockNumber}>
