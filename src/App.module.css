@@ -1,3 +1,13 @@
+:root {
+  --whitebase: #ffffff;
+
+  --blue: #00a9d9;
+
+  --yellow: #ffed00;
+
+  --red: #d22856;
+}
+
 body,
 html {
   margin: 0;
