@@ -29,7 +29,7 @@ export class Catalog extends Component<Props, {}> {
               return (
                 <figure className={styles.item} key={item.name}>
                   <p>
-                    <img src={imgUrl} alt={item.name} width="454" height="303" />
+                    <img src={imgUrl.default} alt={item.name} width="454" height="303" />
                   </p>
                   <figcaption>{item.name}</figcaption>
                 </figure>
