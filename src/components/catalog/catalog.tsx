@@ -25,10 +25,11 @@ export class Catalog extends Component<Props, {}> {
           <h2>Типы продукции</h2>
           <div className={styles.gallery}>
             {name.map((item) => {
+              let imgUrl = require(`./img/${item.fileName}.jpg`)
               return (
                 <figure className={styles.item} key={item.name}>
                   <p>
-                    <img src={require(`./img/${item.fileName}.jpg`)} alt={item.name} width="454" height="303" />
+                    <img src={imgUrl} alt={item.name} width="454" height="303" />
                   </p>
                   <figcaption>{item.name}</figcaption>
                 </figure>
