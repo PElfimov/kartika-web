@@ -26,7 +26,7 @@ export class Catalog extends Component<Props, {}> {
           <div className={styles.gallery}>
             {name.map((item) => {
               return (
-                <figure className={styles.item}>
+                <figure className={styles.item} key={item.name}>
                   <p>
                     <img src={require(`./img/${item.fileName}.jpg`)} alt={item.name} width="454" height="303" />
                   </p>
