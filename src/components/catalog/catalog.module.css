@@ -1,0 +1,54 @@
+.inner {
+  width: 960px;
+  margin: 0 auto;
+}
+
+.root h2 {
+  line-height: 58px;
+  color: var(--yellow);
+  font-size: 48px;
+  text-align: center;
+  font-family: "open sans";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 8px;
+}
+
+.item {
+  width: 219px;
+  margin: 0 0 20px;
+}
+
+.item p {
+  display: block;
+  width: 207px;
+  height: 207px;
+  border: solid 6px var(--blue);
+  overflow: hidden;
+  margin: 0;
+}
+
+.item img {
+  min-width: 306px;
+  transform: translateX(-50px);
+}
+
+.item figcaption {
+  display: block;
+  width: 200px;
+  line-height: 29px;
+  font-size: 24px;
+  text-align: center;
+  font-family: "open sans";
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 0 auto;
+  margin-top: 20px;
+}
