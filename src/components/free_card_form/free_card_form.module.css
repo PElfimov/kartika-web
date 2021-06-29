@@ -140,6 +140,7 @@
 }
 
 .btn {
+  display: block;
   margin: 21px auto 18px;
   height: 60px;
   border-radius: 100px;
@@ -151,6 +152,8 @@
   font-weight: bold;
   font-size: 19px;
   outline-color: blue;
+  text-align: center;
+  font-family: inherit;
 }
 
 .btn:hover {
@@ -167,11 +170,14 @@
   line-height: 12px;
 }
 
-.text:hover {
-  color: red(-red);
+.link:hover {
+  color: var(--red);
 }
 
 .checkBoxInput {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
   font-size: 0;
   position: absolute;
   display: block;

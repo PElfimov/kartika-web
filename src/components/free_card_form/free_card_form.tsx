@@ -13,7 +13,7 @@ export class FreeCardForm extends Component<Props, {}> {
                 <h2>Заказать бесплатную карту</h2>
                 <p>Оставьте заявку и получите пробную карту в ПОДАРОК!</p>
               </legend>
-              <div className="formWrapper">
+              <div className={styles.formWrapper}>
                 <label className={`${styles.icon} ${styles.user}`}>
                   <span className={styles.textHidden}>Ваше имя</span>
                   <input type="text" name="user-name" placeholder="Ваше имя" required />
@@ -28,23 +28,28 @@ export class FreeCardForm extends Component<Props, {}> {
                 </label>
               </div>
               <input
-                className={styles.checkBox}
-                type="checkboxInput"
+                className={styles.checkBoxInput}
+                type="checkbox"
                 name="check-politik"
                 value="enabled"
                 id="form-capture-free-card__checkbox"
                 required
               />
               <label className={styles.checkbox} htmlFor="form-capture-free-card__checkbox">
-                <p className="form-capture-free-card__text form-capture-free-card__text--checkbox">
-                  Я соглашаюсь на передачу персональных данных согласно
-                  <a className={styles.text} href="https://152фз.рф/get_terms/e7891dca8b038199ca96b7c656d599f9">
-                    пользовательскому соглашению
+                <p className={styles.text}>
+                  Я соглашаюсь на передачу персональных данных согласно{` `}
+                  <a
+                    className={`${styles.text} ${styles.link}`}
+                    href="https://152фз.рф/get_terms/e7891dca8b038199ca96b7c656d599f9">
+                    пользовательскому соглашению{` `}
                   </a>
-                  и
-                  <a className={styles.text} href="https://152фз.рф/get_prv/e7891dca8b038199ca96b7c656d599f9">
+                  и{` `}
+                  <a
+                    className={`${styles.text} ${styles.link}`}
+                    href="https://152фз.рф/get_prv/e7891dca8b038199ca96b7c656d599f9">
                     политике конфиденциальности
                   </a>
+                  {`  `}
                   данного сайта
                 </p>
               </label>
