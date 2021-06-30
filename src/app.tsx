@@ -7,6 +7,7 @@ import {Header} from "./components/header"
 import {Nav} from "./components/nav"
 import {PromoPage} from "./components/promo_page"
 import {WhyWe} from "./components/why_we"
+import {Portfolio} from "./components/portfolio"
 
 const App = () => {
   return (
@@ -19,6 +20,7 @@ const App = () => {
         <WhyWe />
         <Catalog />
         <FreeCardForm />
+        <Portfolio />
       </main>
     </div>
   )
