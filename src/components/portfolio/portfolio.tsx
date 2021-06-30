@@ -1,9 +1,24 @@
 import {Component} from "react"
 import styles from "./portfolio.module.css"
 
+interface Item {
+  name: string
+  fileName: string
+}
+
 interface Props {}
 export class Portfolio extends Component<Props, {}> {
   render() {
+    const name: Item[] = [
+      {name: "Карта профессионала гипермаркета «М2»", fileName: "m2"},
+      {name: "Карта магазина «Burton»", fileName: "burton"},
+      {name: "Карта магазина «Шапье»", fileName: "chapie"},
+      {name: "Карта магазина «Силуэт»", fileName: "siluet"},
+      {name: "Карта горнолыжного комплекса «Авальман»", fileName: "avalman"},
+      {name: "Карта магазина обуви «Francesco Donni»", fileName: "francescodonni"},
+      {name: "Карта магазина рукоделия «Hand mad»", fileName: "handmad"},
+      {name: "", fileName: "calendar"}
+    ]
     return (
       <section id="portfolio" className="main-portfolio">
         <h2 className="main-portfolio__title">Портфолио</h2>
@@ -11,15 +26,16 @@ export class Portfolio extends Component<Props, {}> {
           <button className="btn-portfolo btn-portfolo--left" type="button" disabled={true} />
           <div className="main-portfolio__wrapper">
             <ul className="main-portfolio__list">
-              <li className="main-portfolio__item ">
-                <img src="img/m2.jpg" alt="Карта профессионала гипермаркета «М2»" width="404" height="302" />
-              </li>
-              {/* <li className="main-portfolio__item"> <img src="img/burton.jpg" alt="Карта магазина «Burton»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/chapie.jpg" alt="Карта магазина «Шапье»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/siluet.jpg" alt="Карта магазина «Силуэт»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/avalman.jpg" alt="Карта горнолыжного комплекса «Авальман»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/francescodonni.jpg" alt="Карта магазина обуви «Francesco Donni»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/handmad.jpg" alt="Карта магазина рукоделия «Hand mad»" width="404" height="302"></li>
+              {name.map((item) => {
+                let imgUrl = require(`./img/${item.fileName}.jpg`).default
+                return (
+                  <li className="main-portfolio__item ">
+                    <img src={imgUrl} alt={item.name} width="404" height="302" />
+                  </li>
+                )
+              })}
+
+              {/* 
             <li className="main-portfolio__item"> <img src="img/sunlight.jpg" alt="Карта магазина ювелирных украшений «Sunlight»" width="404" height="302"></li>
             <li className="main-portfolio__item"> <img src="img/5element.jpg" alt="Карта магазина «5 Элемент»" width="404" height="302"></li>
             <li className="main-portfolio__item"> <img src="img/planetjens.jpg" alt="Карта магазина «Planet Jens»" width="404" height="302"></li>
