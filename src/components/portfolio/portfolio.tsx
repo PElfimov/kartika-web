@@ -17,7 +17,37 @@ export class Portfolio extends Component<Props, {}> {
       {name: "Карта горнолыжного комплекса «Авальман»", fileName: "avalman"},
       {name: "Карта магазина обуви «Francesco Donni»", fileName: "francescodonni"},
       {name: "Карта магазина рукоделия «Hand mad»", fileName: "handmad"},
-      {name: "", fileName: "calendar"}
+      {name: "Карта магазина ювелирных украшений «Sunlight»", fileName: "sunlight"},
+      {name: "Карта магазина «5 Элемент»", fileName: "5element"},
+      {name: "Карта магазина «Planet Jens»", fileName: "planetjens"},
+      {name: "Карта магазина «Московский ювелирный звод»", fileName: "moscjewfact"},
+      {name: "Карта басейна №3 «Адриатика»", fileName: "adriatika"},
+      {name: "Карта магазина стильной медицинской одежды «Therapy»", fileName: "therapy"},
+      {name: "Карта магазина «Ecco»", fileName: "ecco"},
+      {name: "Карта гипермаркета стрительных материалов  «Формула М2»", fileName: "formulam2"},
+      {name: "Карта магазина «S`Oliver»", fileName: "soliver"},
+      {name: "Карта магазина женской одежды «Лана»", fileName: "lana"},
+      {name: "Подставка на стол с именем «Мир тюнига»", fileName: "p1200518"},
+      {name: "Подставка на стол со скидкой «ЭПЛ»", fileName: "p1200519"},
+      {name: "Карта магазина «Аксиома»", fileName: "aksioma"},
+      {name: "Карты с сублимационной печатью", fileName: "calendar"},
+      {name: "Карта гостинцы «Сибирь»", fileName: "hotelsibir"},
+      {name: "Карта магазина  «По гаммульке»", fileName: "pogramulke"},
+      {name: "Карта магазина «Legend»", fileName: "legend"},
+      {name: "Карта магазина «Shoes Market»", fileName: "shoesmarket"},
+      {name: "Бонусная карта федеральной сети «Гостинец»", fileName: "bonuscard"},
+      {name: "Карта магазина «Fit auto»", fileName: "fitauto"},
+      {name: "Карта магазина «Mille fa mille»", fileName: "millefamille"},
+      {name: "Карта магазина «zoo маркет»", fileName: "zoomarket"},
+      {name: "Карта магазина «Lisete»", fileName: "clubcards"},
+      {name: "Карта автомагазинов и сервиса «Makk мир аккумуляторов»", fileName: "makk"},
+      {name: "Карта магазина садовода «Зеленый дворик»", fileName: "greengarden"},
+      {name: "Подарочный сертификат на установку окон «Fogel»", fileName: "certificate"},
+      {name: "Карта магазина европейкой обуви «Goergo»", fileName: "goergo"},
+      {name: "Карта диагностического центра «Добрый доктор»", fileName: "gooddoctor"},
+      {name: "Карта строительного магазина «Метр»", fileName: "metr"},
+      {name: "Карта магазина «Садовод Любитель»", fileName: "discount"},
+      {name: "Карта хайтек магазина «Эскор»", fileName: "eckor"}
     ]
     return (
       <section id="portfolio" className="main-portfolio">
@@ -27,46 +57,20 @@ export class Portfolio extends Component<Props, {}> {
           <div className="main-portfolio__wrapper">
             <ul className="main-portfolio__list">
               {name.map((item) => {
-                let imgUrl = require(`./img/${item.fileName}.jpg`).default
+                let imgUrl: string
+                try {
+                  imgUrl = require(`./img/${item.fileName}.jpg`).default
+                } catch (err) {
+                  imgUrl = `./img/${item.fileName}.jpg`
+                  console.log(`${imgUrl} file not exist`)
+                }
+
                 return (
-                  <li className="main-portfolio__item ">
+                  <li key={item.fileName} className="main-portfolio__item ">
                     <img src={imgUrl} alt={item.name} width="404" height="302" />
                   </li>
                 )
               })}
-
-              {/* 
-            <li className="main-portfolio__item"> <img src="img/sunlight.jpg" alt="Карта магазина ювелирных украшений «Sunlight»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/5element.jpg" alt="Карта магазина «5 Элемент»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/planetjens.jpg" alt="Карта магазина «Planet Jens»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/moscjewfact.jpg" alt="Карта магазина «Московский ювелирный звод»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/adriatika.jpg" alt="Карта басейна №3 «Адриатика»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/therapy.jpg" alt="Карта магазина стильной медицинской одежды «Therapy»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/ecco.jpg" alt="Карта магазина «Ecco»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/formulam2.jpg" alt="Карта гипермаркета стрительных материалов  «Формула М2»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/soliver.jpg" alt="Карта магазина «S`Oliver»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/lana.jpg" alt="Карта магазина женской одежды «Лана»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/p1200518.jpg" alt="Подставка на стол с именем «Мир тюнига»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/p1200519.jpg" alt="Подставка на стол со скидкой «ЭПЛ»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/aksioma.jpg" alt="Карта магазина «Аксиома»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/sublimation.jpg" alt="Карты с сублимационной печатью" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/hotelsibir.jpg" alt="Карта гостинцы «Сибирь»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/pogramulke.jpg" alt="Карта магазина  «По гаммульке»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/legend.jpg" alt="Карта магазина «Legend»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/shoesmarket.jpg" alt="Карта магазина «Shoes Market»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/bonuscard.jpg" alt="Бонусная карта федеральной сети «Гостинец»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/fitauto.jpg" alt="Карта магазина «Fit auto»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/millefamille.jpg" alt="Карта магазина «Mille fa mille»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/zoomarket.jpg" alt="Карта магазина «zoo маркет»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/clubcards.jpg" alt="Карта магазина «Lisete»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/makk.jpg" alt="Карта автомагазинов и сервиса «Makk мир аккумуляторов»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/greengarden.jpg" alt="Карта магазина садовода «Зеленый дворик»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/certificate.jpg" alt="Подарочный сертификат на установку окон «Fogel»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/goergo.jpg" alt="Карта магазина европейкой обуви «Goergo»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/gooddoctor.jpg" alt="Карта диагностического центра «Добрый доктор»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/metr.jpg" alt="Карта строительного магазина «Метр»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/discount.jpg" alt="Карта магазина «Садовод Любитель»" width="404" height="302"></li>
-            <li className="main-portfolio__item"> <img src="img/eckor.jpg" alt="Карта хайтек магазина «Эскор»" width="404" height="302"></li> */}
             </ul>
           </div>
           <button className="btn-portfolo btn-portfolo--right" type="button" />
