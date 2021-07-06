@@ -1,5 +1,6 @@
 import {Component} from "react"
 import styles from "./portfolio.module.css"
+import {Button} from "./parts/button/button"
 
 interface Item {
   name: string
@@ -50,12 +51,12 @@ export class Portfolio extends Component<Props, {}> {
       {name: "Карта хайтек магазина «Эскор»", fileName: "eckor"}
     ]
     return (
-      <section id="portfolio" className="main-portfolio">
-        <h2 className="main-portfolio__title">Портфолио</h2>
-        <div className="main-portfolio__inner">
-          <button className="btn-portfolo btn-portfolo--left" type="button" disabled={true} />
-          <div className="main-portfolio__wrapper">
-            <ul className="main-portfolio__list">
+      <section id="portfolio" className={styles.root}>
+        <h2 className={styles.title}>Портфолио</h2>
+        <div className={styles.inner}>
+          <Button position={`left`} />
+          <div className={styles.wrapper}>
+            <ul className={styles.list}>
               {name.map((item) => {
                 let imgUrl: string
                 try {
@@ -66,14 +67,14 @@ export class Portfolio extends Component<Props, {}> {
                 }
 
                 return (
-                  <li key={item.fileName} className="main-portfolio__item ">
+                  <li key={item.fileName} className={styles.item}>
                     <img src={imgUrl} alt={item.name} width="404" height="302" />
                   </li>
                 )
               })}
             </ul>
           </div>
-          <button className="btn-portfolo btn-portfolo--right" type="button" />
+          <Button position={`right`} />
         </div>
       </section>
     )

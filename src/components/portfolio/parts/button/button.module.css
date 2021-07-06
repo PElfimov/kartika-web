@@ -1,0 +1,30 @@
+.root {
+  border: none;
+  background-color: transparent;
+  background-image: url("./img/spritesheet.png");
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 45px;
+}
+
+.right {
+  background-position: -342px -5px;
+}
+
+.left {
+  width: 30px;
+  height: 48px;
+  background-position: -310px -265px;
+}
+
+.left:hover {
+  background-position: -5px -323px;
+}
+
+.right:hover {
+  background-position: -341px -60px;
+}
+
+.root [disabled="disabled"] {
+  background-image: none;
+}
