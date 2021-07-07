@@ -25,6 +25,6 @@
   background-position: -341px -60px;
 }
 
-.root [disabled="disabled"] {
+.root:disabled {
   background-image: none;
 }
