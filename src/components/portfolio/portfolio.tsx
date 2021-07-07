@@ -5,11 +5,16 @@ import {list} from "./list"
 import {observer} from "mobx-react"
 import {action, observable, makeObservable} from "mobx"
 
+const OFFSET = 885
+
 interface Props {}
 @observer
 export class Portfolio extends Component<Props, {}> {
   @observable
   private Step: number = 0
+
+  @observable
+  private rightButtonVisible: boolean = false
 
   constructor(props: any) {
     super(props)
@@ -19,7 +24,13 @@ export class Portfolio extends Component<Props, {}> {
   @action
   private moveRight() {
     console.log("right", this.Step)
-    this.Step = this.Step + 500
+    this.Step = this.Step + OFFSET
+  }
+
+  @action
+  private moveLeft() {
+    console.log("right", this.Step)
+    this.Step = this.Step - OFFSET
   }
 
   render() {
@@ -30,7 +41,7 @@ export class Portfolio extends Component<Props, {}> {
           <Button
             position={`left`}
             onClick={() => {
-              console.log("hello")
+              this.moveLeft()
             }}
           />
           <div className={styles.wrapper}>
