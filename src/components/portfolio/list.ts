@@ -3,7 +3,7 @@ interface Item {
   fileName: string
 }
 
-export const name: Item[] = [
+export const list: Item[] = [
   {name: "Карта профессионала гипермаркета «М2»", fileName: "m2"},
   {name: "Карта магазина «Burton»", fileName: "burton"},
   {name: "Карта магазина «Шапье»", fileName: "chapie"},
