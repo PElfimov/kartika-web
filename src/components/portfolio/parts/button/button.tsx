@@ -3,10 +3,27 @@ import styles from "./button.module.css"
 
 interface Props {
   position: `left` | `right`
+  onClick: (e?: any) => void
+  disabled?: boolean
 }
 export class Button extends Component<Props, {}> {
+  private onClick(event: any) {
+    const {onClick} = this.props
+    event.preventDefault()
+    event.stopPropagation()
+    onClick(event)
+  }
+
   render() {
-    const {position} = this.props
-    return <button className={`${styles.root} ${styles[position]}`} type="button" disabled={true} />
+    const {position, disabled} = this.props
+
+    return (
+      <button
+        className={`${styles.root} ${styles[position]}`}
+        type="button"
+        onClick={this.onClick.bind(this)}
+        disabled={disabled}
+      />
+    )
   }
 }
