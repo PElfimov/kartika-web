@@ -60,9 +60,9 @@ export class Portfolio extends Component<Props, {}> {
               {name.map((item) => {
                 let imgUrl: string
                 try {
-                  imgUrl = require(`./img/${item.fileName}.jpg`).default
+                  imgUrl = require(`./parts/img/${item.fileName}.jpg`).default
                 } catch (err) {
-                  imgUrl = `./img/${item.fileName}.jpg`
+                  imgUrl = `${item.fileName}.jpg`
                   console.log(`${imgUrl} file not exist`)
                 }
 
