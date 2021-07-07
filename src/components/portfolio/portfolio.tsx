@@ -3,7 +3,7 @@ import styles from "./portfolio.module.css"
 import {Button} from "./parts/button/button"
 import {list} from "./list"
 import {observer} from "mobx-react"
-import {action, observable, makeObservable} from "mobx"
+import {action, observable, makeObservable, computed} from "mobx"
 
 const OFFSET = 885
 
@@ -13,12 +13,19 @@ export class Portfolio extends Component<Props, {}> {
   @observable
   private Step: number = 0
 
-  @observable
-  private rightButtonVisible: boolean = false
-
   constructor(props: any) {
     super(props)
     makeObservable(this)
+  }
+
+  @computed
+  get rightButtonVisible() {
+    return false
+  }
+
+  @computed
+  get leftButtonVisible() {
+    return true
   }
 
   @action
@@ -43,6 +50,7 @@ export class Portfolio extends Component<Props, {}> {
             onClick={() => {
               this.moveLeft()
             }}
+            disabled={this.leftButtonVisible}
           />
           <div className={styles.wrapper}>
             <ul style={{transform: `translateX(-${this.Step}px)`, transition: `.6s transform`}} className={styles.list}>
@@ -68,6 +76,7 @@ export class Portfolio extends Component<Props, {}> {
             onClick={() => {
               this.moveRight()
             }}
+            disabled={this.rightButtonVisible}
           />
         </div>
       </section>
