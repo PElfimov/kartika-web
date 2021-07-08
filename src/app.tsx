@@ -9,6 +9,7 @@ import {PromoPage} from "./components/promo_page"
 import {WhyWe} from "./components/why_we"
 import {Portfolio} from "./components/portfolio"
 import {Price} from "./components/price"
+import {Reviews} from "./components/reviews"
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <FreeCardForm />
         <Portfolio />
         <Price />
+        <Reviews />
       </main>
     </div>
   )
