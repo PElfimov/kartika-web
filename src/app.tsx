@@ -8,6 +8,7 @@ import {Nav} from "./components/nav"
 import {PromoPage} from "./components/promo_page"
 import {WhyWe} from "./components/why_we"
 import {Portfolio} from "./components/portfolio"
+import {Price} from "./components/price"
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
         <Catalog />
         <FreeCardForm />
         <Portfolio />
+        <Price />
       </main>
     </div>
   )
