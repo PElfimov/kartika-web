@@ -11,7 +11,7 @@ interface Props {}
 @observer
 export class Portfolio extends Component<Props, {}> {
   @observable
-  private Step: number = 0
+  private step: number = 0
 
   constructor(props: any) {
     super(props)
@@ -20,24 +20,32 @@ export class Portfolio extends Component<Props, {}> {
 
   @computed
   get rightButtonVisible() {
-    return false
+    const maxOffset = (list.length / 3) * OFFSET
+    let unvisitable: boolean = false
+
+    if (maxOffset - this.step <= OFFSET) {
+      unvisitable = true
+    }
+    return unvisitable
   }
 
   @computed
   get leftButtonVisible() {
-    return true
+    let unvisitable: boolean = true
+    if (this.step > 0) {
+      unvisitable = false
+    }
+    return unvisitable
   }
 
   @action
   private moveRight() {
-    console.log("right", this.Step)
-    this.Step = this.Step + OFFSET
+    this.step = this.step + OFFSET
   }
 
   @action
   private moveLeft() {
-    console.log("right", this.Step)
-    this.Step = this.Step - OFFSET
+    this.step = this.step - OFFSET
   }
 
   render() {
@@ -53,14 +61,14 @@ export class Portfolio extends Component<Props, {}> {
             disabled={this.leftButtonVisible}
           />
           <div className={styles.wrapper}>
-            <ul style={{transform: `translateX(-${this.Step}px)`, transition: `.6s transform`}} className={styles.list}>
+            <ul style={{transform: `translateX(-${this.step}px)`, transition: `.6s transform`}} className={styles.list}>
               {list.map((item) => {
                 let imgUrl: string
                 try {
                   imgUrl = require(`./parts/img/${item.fileName}.jpg`).default
                 } catch (err) {
                   imgUrl = `${item.fileName}.jpg`
-                  console.log(`${imgUrl} file not exist`)
+                  console.error(`${imgUrl} file not exist`)
                 }
 
                 return (
