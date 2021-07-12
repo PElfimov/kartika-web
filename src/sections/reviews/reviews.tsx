@@ -67,7 +67,9 @@ export class Reviews extends Component<Props, {}> {
                 return (
                   <li className={styles.item} key={`${item.author} ${index}`}>
                     <p className={styles.text}>{item.review}</p>
-                    <p className={styles.user}>{item.author}</p>
+                    <p className={styles.user} style={{}}>
+                      {item.author}
+                    </p>
                     <p className={styles.date}>{item.date}</p>
                   </li>
                 )
