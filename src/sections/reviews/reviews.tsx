@@ -3,10 +3,12 @@ import styles from "./reviews.module.css"
 import {list} from "./list"
 import {observer} from "mobx-react"
 import {action, observable, makeObservable, computed} from "mobx"
+import {CarouselButton} from "../../components/buttons/сarousel_button"
 
 const OFFSET = 885
 
 interface Props {}
+@observer
 export class Reviews extends Component<Props, {}> {
   @observable
   private step: number = 0
@@ -39,6 +41,7 @@ export class Reviews extends Component<Props, {}> {
   @action
   private moveRight() {
     this.step = this.step + OFFSET
+    console.log(this.step)
   }
 
   @action
@@ -50,12 +53,18 @@ export class Reviews extends Component<Props, {}> {
       <section className={styles.root} id="reviews">
         <h2 className={styles.title}>Отзывы наших клиентов</h2>
         <div className={styles.inner}>
-          <button className="btn-reviews btn-reviews--left" type="button"></button>
+          <CarouselButton
+            position={`left`}
+            onClick={() => {
+              this.moveLeft()
+            }}
+            disabled={this.leftButtonVisible}
+          />
           <div className={styles.wrapper}>
-            <ul className={styles.list}>
-              {list.map((item) => {
+            <ul className={styles.list} style={{transform: `translateX(-${this.step}px)`, transition: `.6s transform`}}>
+              {list.map((item, index) => {
                 return (
-                  <li className={styles.item}>
+                  <li className={styles.item} key={`${item.author} ${index}`}>
                     <p className={styles.text}>{item.review}</p>
                     <p className={styles.user}>{item.author}</p>
                     <p className={styles.date}>{item.date}</p>
@@ -64,7 +73,13 @@ export class Reviews extends Component<Props, {}> {
               })}
             </ul>
           </div>
-          <button className="btn-reviews btn-reviews--right" type="button"></button>
+          <CarouselButton
+            position={`right`}
+            onClick={() => {
+              this.moveRight()
+            }}
+            disabled={this.rightButtonVisible}
+          />
         </div>
       </section>
     )
