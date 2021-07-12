@@ -1,9 +1,9 @@
 import {Component} from "react"
 import styles from "./portfolio.module.css"
-import {Button} from "./parts/button/button"
 import {list} from "./list"
 import {observer} from "mobx-react"
 import {action, observable, makeObservable, computed} from "mobx"
+import {CarouselButton} from "./../../components/buttons/сarousel_button/сarousel_button"
 
 const OFFSET = 885
 
@@ -53,7 +53,7 @@ export class Portfolio extends Component<Props, {}> {
       <section id="portfolio" className={styles.root}>
         <h2 className={styles.title}>Портфолио</h2>
         <div className={styles.inner}>
-          <Button
+          <CarouselButton
             position={`left`}
             onClick={() => {
               this.moveLeft()
@@ -79,7 +79,7 @@ export class Portfolio extends Component<Props, {}> {
               })}
             </ul>
           </div>
-          <Button
+          <CarouselButton
             position={`right`}
             onClick={() => {
               this.moveRight()

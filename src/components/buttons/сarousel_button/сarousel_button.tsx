@@ -1,12 +1,12 @@
 import {Component} from "react"
-import styles from "./button.module.css"
+import styles from "./сarousel_button.module.css"
 
 interface Props {
   position: `left` | `right`
   onClick: (e?: any) => void
   disabled?: boolean
 }
-export class Button extends Component<Props, {}> {
+export class CarouselButton extends Component<Props, {}> {
   private onClick(event: any) {
     const {onClick} = this.props
     event.preventDefault()
