@@ -5,7 +5,7 @@ import {observer} from "mobx-react"
 import {action, observable, makeObservable, computed} from "mobx"
 import {CarouselButton} from "../../components/buttons/сarousel_button"
 
-const OFFSET = 885
+const OFFSET = 890
 
 interface Props {}
 @observer
@@ -20,7 +20,8 @@ export class Reviews extends Component<Props, {}> {
 
   @computed
   get rightButtonVisible() {
-    const maxOffset = (list.length / 3) * OFFSET
+    const sameTimeVisible = 2
+    const maxOffset = (list.length / sameTimeVisible) * OFFSET
     let unvisitable: boolean = false
 
     if (maxOffset - this.step <= OFFSET) {
