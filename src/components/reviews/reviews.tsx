@@ -1,70 +1,67 @@
 import {Component} from "react"
 import styles from "./reviews.module.css"
+import {list} from "./list"
+import {observer} from "mobx-react"
+import {action, observable, makeObservable, computed} from "mobx"
+
+const OFFSET = 885
 
 interface Props {}
 export class Reviews extends Component<Props, {}> {
+  @observable
+  private step: number = 0
+
+  constructor(props: any) {
+    super(props)
+    makeObservable(this)
+  }
+
+  @computed
+  get rightButtonVisible() {
+    const maxOffset = (list.length / 3) * OFFSET
+    let unvisitable: boolean = false
+
+    if (maxOffset - this.step <= OFFSET) {
+      unvisitable = true
+    }
+    return unvisitable
+  }
+
+  @computed
+  get leftButtonVisible() {
+    let unvisitable: boolean = true
+    if (this.step > 0) {
+      unvisitable = false
+    }
+    return unvisitable
+  }
+
+  @action
+  private moveRight() {
+    this.step = this.step + OFFSET
+  }
+
+  @action
+  private moveLeft() {
+    this.step = this.step - OFFSET
+  }
   render() {
     return (
-      <section className="customer-reviews" id="reviews">
-        <h2 className="customer-reviews__title">Отзывы наших клиентов</h2>
-        <div className="customer-reviews__inner">
+      <section className={styles.root} id="reviews">
+        <h2 className={styles.title}>Отзывы наших клиентов</h2>
+        <div className={styles.inner}>
           <button className="btn-reviews btn-reviews--left" type="button"></button>
-          <div className="customer-reviews__wrapper">
-            <ul className="customer-reviews__list">
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Каким бы ни был тираж - одна карта или тысячи, компания всегда работает профессионально - все
-                  качественно и в срок. Надеемся на долгосрочное и эффективное сотрудничество.
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--m2">Дарья, «Формула М2»</p>
-                <p className="customer-reviews__date">04.06.2015</p>
-              </li>
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Хорошая типография, заказывал листовки и скидочные карты, всё сделали быстро и качественно. Пожалел,
-                  что визитки заказывал не здесь. Приятное и вежливое общение с персоналом, ребята профессионалы.
-                  Рекомендую!
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--automag">
-                  Андрей, сеть магазинов «АВТОМАГ»
-                </p>
-                <p className="customer-reviews__date">25.08.2015</p>
-              </li>
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Выражаем благодарность всему коллективу типографии, и в частности Павлу Елфимову за отличную работу,
-                  профессионализм и высокое качество продукции. Успехов и процветания!
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--gooddoctor">Алла, КДЦ «Добрый доктор»</p>
-                <p className="customer-reviews__date">01.10.2014</p>
-              </li>
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Заказывали карты для персонала, после года использования ни одна буква на карте не пострадала! Даже на
-                  ленте ни одной царапины!!! Спасибо за качество!!!
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--arabika">
-                  Наталья, компания ООО «Арабика»
-                </p>
-                <p className="customer-reviews__date">10.09.2015</p>
-              </li>
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Карты понравились! Заказ был выполнен быстро. Цены тоже порадовали!
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--mille">Наталья, «Mille fa Mille»</p>
-                <p className="customer-reviews__date">29.06.2015</p>
-              </li>
-              <li className="customer-reviews__item">
-                <p className="customer-reviews__text">
-                  Огромная благодарность «Картике» за качество, сроки изготовления и отзывчивость на любую просьбу
-                  клиента!
-                </p>
-                <p className="customer-reviews__user customer-reviews__user--sibir">
-                  Ирина Васильевна, Гостиница «Сибирь»
-                </p>
-                <p className="customer-reviews__date">06.10.2014</p>
-              </li>
+          <div className={styles.wrapper}>
+            <ul className={styles.list}>
+              {list.map((item) => {
+                return (
+                  <li className={styles.item}>
+                    <p className={styles.text}>{item.review}</p>
+                    <p className={styles.user}>{item.author}</p>
+                    <p className={styles.date}>{item.date}</p>
+                  </li>
+                )
+              })}
             </ul>
           </div>
           <button className="btn-reviews btn-reviews--right" type="button"></button>
@@ -73,3 +70,50 @@ export class Reviews extends Component<Props, {}> {
     )
   }
 }
+
+// <li className="customer-reviews__item">
+// <p className="customer-reviews__text">
+//   Хорошая типография, заказывал листовки и скидочные карты, всё сделали быстро и качественно. Пожалел,
+//   что визитки заказывал не здесь. Приятное и вежливое общение с персоналом, ребята профессионалы.
+//   Рекомендую!
+// </p>
+// <p className="customer-reviews__user customer-reviews__user--automag">
+//   Андрей, сеть магазинов «АВТОМАГ»
+// </p>
+// <p className="customer-reviews__date">25.08.2015</p>
+// </li>
+// <li className="customer-reviews__item">
+// <p className="customer-reviews__text">
+//   Выражаем благодарность всему коллективу типографии, и в частности Павлу Елфимову за отличную работу,
+//   профессионализм и высокое качество продукции. Успехов и процветания!
+// </p>
+// <p className="customer-reviews__user customer-reviews__user--gooddoctor">Алла, КДЦ «Добрый доктор»</p>
+// <p className="customer-reviews__date">01.10.2014</p>
+// </li>
+// <li className="customer-reviews__item">
+// <p className="customer-reviews__text">
+//   Заказывали карты для персонала, после года использования ни одна буква на карте не пострадала! Даже на
+//   ленте ни одной царапины!!! Спасибо за качество!!!
+// </p>
+// <p className="customer-reviews__user customer-reviews__user--arabika">
+//   Наталья, компания ООО «Арабика»
+// </p>
+// <p className="customer-reviews__date">10.09.2015</p>
+// </li>
+// <li className="customer-reviews__item">
+// <p className="customer-reviews__text">
+//   Карты понравились! Заказ был выполнен быстро. Цены тоже порадовали!
+// </p>
+// <p className="customer-reviews__user customer-reviews__user--mille">Наталья, «Mille fa Mille»</p>
+// <p className="customer-reviews__date">29.06.2015</p>
+// </li>
+// <li className="customer-reviews__item">
+// <p className="customer-reviews__text">
+//   Огромная благодарность «Картике» за качество, сроки изготовления и отзывчивость на любую просьбу
+//   клиента!
+// </p>
+// <p className="customer-reviews__user customer-reviews__user--sibir">
+//   Ирина Васильевна, Гостиница «Сибирь»
+// </p>
+// <p className="customer-reviews__date">06.10.2014</p>
+// </li>
