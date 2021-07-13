@@ -10,6 +10,7 @@ import {WhyWe} from "./sections/why_we"
 import {Portfolio} from "./sections/portfolio"
 import {Price} from "./sections/price"
 import {Reviews} from "./sections/reviews"
+import {Faq} from "./sections/faq"
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
         <Portfolio />
         <Price />
         <Reviews />
+        <Faq />
       </main>
     </div>
   )
