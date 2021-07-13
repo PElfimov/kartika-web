@@ -64,10 +64,18 @@ export class Reviews extends Component<Props, {}> {
           <div className={styles.wrapper}>
             <ul className={styles.list} style={{transform: `translateX(-${this.step}px)`, transition: `.6s transform`}}>
               {list.map((item, index) => {
+                let imgUrl: string
+                try {
+                  imgUrl = require(`./img/${item.fileLogo}.png`).default
+                } catch (err) {
+                  imgUrl = `${item.fileLogo}.png`
+                  console.error(`${imgUrl} file not exist`)
+                }
                 return (
                   <li className={styles.item} key={`${item.author} ${index}`}>
                     <p className={styles.text}>{item.review}</p>
-                    <p className={styles.user} style={{}}>
+                    <p className={styles.user}>
+                      <div className={styles.icon} style={{backgroundImage: `url(${imgUrl})`}} />
                       {item.author}
                     </p>
                     <p className={styles.date}>{item.date}</p>
