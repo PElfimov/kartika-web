@@ -11,6 +11,7 @@ import {Portfolio} from "./sections/portfolio"
 import {Price} from "./sections/price"
 import {Reviews} from "./sections/reviews"
 import {Faq} from "./sections/faq"
+import {Manufacture} from "./sections/manufacture"
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
         <Price />
         <Reviews />
         <Faq />
+        <Manufacture />
       </main>
     </div>
   )
