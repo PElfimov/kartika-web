@@ -75,7 +75,7 @@ export class Reviews extends Component<Props, {}> {
                   <li className={styles.item} key={`${item.author} ${index}`}>
                     <p className={styles.text}>{item.review}</p>
                     <p className={styles.user}>
-                      <div className={styles.icon} style={{backgroundImage: `url(${imgUrl})`}} />
+                      <span className={styles.icon} style={{backgroundImage: `url(${imgUrl})`}} />
                       {item.author}
                     </p>
                     <p className={styles.date}>{item.date}</p>
