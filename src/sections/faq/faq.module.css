@@ -55,6 +55,7 @@
   padding-left: 10px;
   overflow: hidden;
   height: 0;
+  white-space: pre-line;
 }
 
 .radio:checked + .answer {
