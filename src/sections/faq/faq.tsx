@@ -1,4 +1,5 @@
 import {Component} from "react"
+import React from "react"
 import styles from "./faq.module.css"
 import {list} from "./list"
 
@@ -14,13 +15,13 @@ export class Faq extends Component<Props, {}> {
               {list.map((item, index) => {
                 const labelTag = "faq"
                 return (
-                  <>
+                  <React.Fragment key={index}>
                     <label className={styles.question} htmlFor={`${labelTag} ${index}`}>
                       {`${index + 1}. ${item.question}`}
                     </label>
                     <input className={styles.radio} type="radio" name="radio-faq" id={`${labelTag} ${index}`} />
                     <p className={styles.answer}>{item.answer}</p>
-                  </>
+                  </React.Fragment>
                 )
               })}
             </fieldset>
