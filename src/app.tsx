@@ -1,4 +1,3 @@
-import React from "react"
 import styles from "./app.module.css"
 import {CapturePage} from "./sections/capture_page"
 import {Catalog} from "./sections/catalog"
@@ -12,12 +11,13 @@ import {Price} from "./sections/price"
 import {Reviews} from "./sections/reviews"
 import {Faq} from "./sections/faq"
 import {Manufacture} from "./sections/manufacture"
+import {Order} from "./sections/order"
 
 const App = () => {
   return (
-    <div className={styles.wrapper}>
+    <>
       <Header />
-      <main>
+      <main className={styles.main}>
         <CapturePage />
         <Nav />
         <PromoPage />
@@ -29,8 +29,9 @@ const App = () => {
         <Reviews />
         <Faq />
         <Manufacture />
+        <Order />
       </main>
-    </div>
+    </>
   )
 }
 
