@@ -5,12 +5,12 @@ interface Props {}
 export class Order extends Component<Props, {}> {
   render() {
     return (
-      <section className="leave-request-main">
-        <div className="leave-request-main__inner">
+      <section className={styles.root}>
+        <div className={styles.inner}>
           <form className="leave-request-form" action="javascript:void(null);" method="post">
             <fieldset id="request-for-settleme" className="leave-request-form__part1 ">
-              <h2 className="leave-request-form__title">Оставьте заявку на расчет стоимости</h2>
-              <p className="leave-request-form__title-text">и наш менеджер рассчитает стоимость вашего заказа</p>
+              <h2>Оставьте заявку на расчет стоимости</h2>
+              <p className={styles.text}>и наш менеджер рассчитает стоимость вашего заказа</p>
               <p className="leave-request-form__line">
                 <label className="leave-request-form__text-hidden" htmlFor="leave-request-name">
                   Введите имя
