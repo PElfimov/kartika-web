@@ -24,18 +24,14 @@ export class Order extends Component<Props, {}> {
               </p>
               <p className={styles.line}>
                 <select name="plastic" id="leave-request-plastic" defaultValue={"Выберите пластик"}>
-                  <option disabled selected>
-                    Выберите пластик
-                  </option>
+                  <option disabled>Выберите пластик</option>
                   <option value="Белый пластик">Белый пластик</option>
                   <option value="Золотой пластик">Золотой пластик</option>
                   <option value="Серебряный пластик">Серебряный пластик</option>
                   <option value="Прозрачный пластик">Прозрачный пластик</option>
                 </select>
-                <select name="surface" id="leave-request-surface">
-                  <option disabled selected>
-                    Выберите покрытие
-                  </option>
+                <select name="surface" id="leave-request-surface" defaultValue={" Выберите покрытие"}>
+                  <option disabled>Выберите покрытие</option>
                   <option value="Глянцевое">Глянцевое</option>
                   <option value="Матовое">Матовое</option>
                   <option value="Шагрень">Шагрень</option>
@@ -52,7 +48,8 @@ export class Order extends Component<Props, {}> {
                 <div className={styles.inner}>
                   <p className="leave-request-form__text">Выберите толщину карты:</p>
                   <label className="leave-request-form__check-box">
-                    <input type="radio" name="card-thickness" value="0.46" checked />
+                    <input type="radio" name="card-thickness" value="0.46" />
+                    {/* checked */}
                     0,46мм (тонкая карта)
                   </label>
                   <label className="leave-request-form__check-box">
@@ -63,7 +60,7 @@ export class Order extends Component<Props, {}> {
                 <div className={styles.inner}>
                   <p className="leave-request-form__text">Выберите тип печати:</p>
                   <label className="leave-request-form__check-box">
-                    <input type="radio" name="print-type" value="4+4" checked />
+                    <input type="radio" name="print-type" value="4+4" /> {/* checked */}
                     4+4 (двухсторонняя)
                   </label>
                   <label className="leave-request-form__check-box">
@@ -170,7 +167,7 @@ export class Order extends Component<Props, {}> {
                   <p className="types-personalization__chip-title">Наличие чипа:</p>
                   <div className="types-personalization__chip-wrapper">
                     <label className="types-personalization__smartcard">
-                      <input type="radio" name="smartcard" value="without" checked />
+                      <input type="radio" name="smartcard" value="without" /> {/* checked */}
                       Без чипа
                     </label>
                     <label className="types-personalization__smartcard">
