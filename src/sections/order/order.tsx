@@ -6,23 +6,14 @@ export class Order extends Component<Props, {}> {
   render() {
     return (
       <section className={styles.root}>
-        <div className={styles.inner}>
-          <form className="leave-request-form" action="javascript:void(null);" method="post">
-            <fieldset id="request-for-settleme" className="leave-request-form__part1 ">
-              <h2>Оставьте заявку на расчет стоимости</h2>
-              <p className={styles.text}>и наш менеджер рассчитает стоимость вашего заказа</p>
-              <p className="leave-request-form__line">
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-name">
-                  Введите имя
-                </label>
+        <div>
+          <form className={styles.form}>
+            <fieldset id="request-for-settleme" className="form">
+              <h2 className={styles.title}>Оставьте заявку на расчет стоимости</h2>
+              <p>и наш менеджер рассчитает стоимость вашего заказа</p>
+              <p className={styles.line}>
                 <input type="text" name="user-name" id="leave-request-name" placeholder="Введите имя" required />
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-tel">
-                  Введите телефон
-                </label>
                 <input type="tel" name="phone-number" id="leave-request-tel" placeholder="Введите телефон" required />
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-email">
-                  Введите электронную почту
-                </label>
                 <input
                   type="email"
                   name="user-mail"
@@ -31,11 +22,8 @@ export class Order extends Component<Props, {}> {
                   required
                 />
               </p>
-              <p className="leave-request-form__line">
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-plastic">
-                  Выберете пластик для ваших карт
-                </label>
-                <select name="plastic" id="leave-request-plastic">
+              <p className={styles.line}>
+                <select name="plastic" id="leave-request-plastic" defaultValue={"Выберите пластик"}>
                   <option disabled selected>
                     Выберите пластик
                   </option>
@@ -44,9 +32,6 @@ export class Order extends Component<Props, {}> {
                   <option value="Серебряный пластик">Серебряный пластик</option>
                   <option value="Прозрачный пластик">Прозрачный пластик</option>
                 </select>
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-surface">
-                  Выберете покрытие карты
-                </label>
                 <select name="surface" id="leave-request-surface">
                   <option disabled selected>
                     Выберите покрытие
@@ -55,9 +40,6 @@ export class Order extends Component<Props, {}> {
                   <option value="Матовое">Матовое</option>
                   <option value="Шагрень">Шагрень</option>
                 </select>
-                <label className="leave-request-form__text-hidden" htmlFor="leave-request-summ-card">
-                  Введите предполагаемый тираж
-                </label>
                 <input
                   type="number"
                   name="summ-card"
@@ -66,8 +48,8 @@ export class Order extends Component<Props, {}> {
                   required
                 />
               </p>
-              <div className="leave-request-form__line-wrapper">
-                <div className="leave-request-form__line-inner">
+              <div className={styles.wrapper}>
+                <div className={styles.inner}>
                   <p className="leave-request-form__text">Выберите толщину карты:</p>
                   <label className="leave-request-form__check-box">
                     <input type="radio" name="card-thickness" value="0.46" checked />
@@ -78,7 +60,7 @@ export class Order extends Component<Props, {}> {
                     0,76мм (толстая карта)
                   </label>
                 </div>
-                <div className="leave-request-form__line-inner">
+                <div className={styles.inner}>
                   <p className="leave-request-form__text">Выберите тип печати:</p>
                   <label className="leave-request-form__check-box">
                     <input type="radio" name="print-type" value="4+4" checked />

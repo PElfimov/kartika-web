@@ -9,7 +9,7 @@
   padding-bottom: 150px;
 }
 
-.inner {
+.root > div {
   width: 960px;
   margin: 0 auto;
 }
@@ -70,4 +70,129 @@
   left: 13px;
   top: 50%;
   transform: translateY(-60%) rotate(45deg);
+}
+
+.form > fieldset {
+  border: none;
+}
+
+.title {
+  line-height: 43px;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 19px;
+  text-transform: uppercase;
+}
+
+.title + p {
+  line-height: 26px;
+  color: #ffffff;
+  font-size: 22px;
+  text-align: center;
+  font-weight: 300;
+  margin-bottom: 41px;
+}
+
+.line {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5px;
+  margin-bottom: 0;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  margin-right: 90px;
+  width: 250px;
+}
+
+.line input,
+.line select {
+  width: 273px;
+  min-height: 33px;
+  color: #000000;
+  font-family: open-sans, sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  padding: 6px;
+  background-color: var(--blue, blue);
+  border: solid 2px #ffffff;
+}
+
+.line input:focus {
+  transition: 0.2s;
+  transform: scale(1.03);
+}
+
+.line input:hover {
+  transition: 0.2s;
+  transform: scale(1.03);
+}
+
+.line select:focus {
+  transition: 0.2s;
+  transform: scale(1.03);
+}
+
+.line select:hover {
+  transition: 0.2s;
+  transform: scale(1.03);
+}
+
+.line select {
+  width: 287px;
+  cursor: pointer;
+}
+
+.line option {
+  background-color: #ffffff;
+}
+
+.line input::placeholder {
+  color: #000000;
+}
+
+.leave-request-form__text {
+  margin: 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 400;
+}
+
+.leave-request-form__check-box {
+  line-height: 18px;
+  color: #000000;
+  font-size: 18px;
+  font-weight: 400;
+  margin-top: 10px;
+  cursor: pointer;
+  &:hover {
+    font-weight: bold;
+  }
+}
+
+.leave-request-form__title2 {
+  line-height: 43px;
+  color: #ffffff;
+  font-size: 36px;
+  text-align: center;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin: 38px 0 0;
+}
+
+.leave-request-form__legend {
+  text-align: center;
+  margin: 0;
 }
