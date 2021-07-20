@@ -1,5 +1,6 @@
 import {Component} from "react"
 import styles from "./order.module.css"
+import {TypesOfPersonalization} from "./parts/types_of_personalization"
 
 interface Props {}
 export class Order extends Component<Props, {}> {
@@ -46,149 +47,35 @@ export class Order extends Component<Props, {}> {
               </p>
               <div className={styles.wrapper}>
                 <div className={styles.inner}>
-                  <p className="leave-request-form__text">Выберите толщину карты:</p>
-                  <label className="leave-request-form__check-box">
+                  <p className={styles.formText}>Выберите толщину карты:</p>
+                  <label className={styles.checkBox}>
                     <input type="radio" name="card-thickness" value="0.46" />
                     {/* checked */}
                     0,46мм (тонкая карта)
                   </label>
-                  <label className="leave-request-form__check-box">
+                  <label className={styles.checkBox}>
                     <input type="radio" name="card-thickness" id="card-thickness-076" value="0.76" />
                     0,76мм (толстая карта)
                   </label>
                 </div>
                 <div className={styles.inner}>
-                  <p className="leave-request-form__text">Выберите тип печати:</p>
-                  <label className="leave-request-form__check-box">
+                  <p className={styles.formText}>Выберите тип печати:</p>
+                  <label className={styles.checkBox}>
                     <input type="radio" name="print-type" value="4+4" /> {/* checked */}
                     4+4 (двухсторонняя)
                   </label>
-                  <label className="leave-request-form__check-box">
+                  <label className={styles.checkBox}>
                     <input type="radio" name="print-type" value="4+0" />
                     4+0 (односторонняя)
                   </label>
                 </div>
               </div>
             </fieldset>
-            <fieldset className="leave-request-form__part2">
-              <legend className="leave-request-form__legend">
-                <h3 className="leave-request-form__title2">Виды персонализации:</h3>
+            <fieldset>
+              <legend className={styles.legend}>
+                <h3 className={styles.title2}>Виды персонализации:</h3>
               </legend>
-              <div className="types-personalization__wrapper">
-                <div className="types-personalization__inner   types-personalization__inner--hico">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="hico"
-                    id="types-personalization-hico"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-hico" tabIndex={0}>
-                    Магнитная полоса
-                  </label>
-                </div>
-                <div className="types-personalization__inner   types-personalization__inner--barcode">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="barcode"
-                    id="types-personalization-barcode"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-barcode">
-                    Штрих-код
-                  </label>
-                </div>
-                <div className="types-personalization__inner   types-personalization__inner--scratch">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="scratch"
-                    id="types-personalization-scratch"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-scratch">
-                    Скретч-полоса
-                  </label>
-                </div>
-                <div className="types-personalization__inner types-personalization__inner--emboss">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="emboss"
-                    id="types-personalization-emboss"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-emboss">
-                    Эмбоссирование
-                  </label>
-                </div>
-                <div className="types-personalization__inner types-personalization__inner--signature-band">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="signature-band"
-                    id="types-personalization-signature-band"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-signature-band">
-                    <span>Полоса для подписи</span>
-                  </label>
-                </div>
-                <div className="types-personalization__inner   types-personalization__inner--variable-numbering">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="variable-numbering"
-                    id="types-personalization-variable-numbering"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-variable-numbering">
-                    Переменная нумерация
-                  </label>
-                </div>
-                <div className="types-personalization__inner   types-personalization__inner--sublimation">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="sublimation"
-                    id="types-personalization-sublimation"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-sublimation">
-                    Сублимацион- ная печать
-                  </label>
-                </div>
-                <div className="types-personalization__inner types-personalization__inner--indent">
-                  <input
-                    type="checkbox"
-                    className="types-personalization__input"
-                    name="indent"
-                    id="types-personalization-indent"
-                  />
-                  <label className="types-personalization__label" htmlFor="types-personalization-indent">
-                    Индент печать
-                  </label>
-                </div>
-                <div className="types-personalization__chip">
-                  <p className="types-personalization__chip-title">Наличие чипа:</p>
-                  <div className="types-personalization__chip-wrapper">
-                    <label className="types-personalization__smartcard">
-                      <input type="radio" name="smartcard" value="without" /> {/* checked */}
-                      Без чипа
-                    </label>
-                    <label className="types-personalization__smartcard">
-                      <input type="radio" name="smartcard" value="emarine" />
-                      EMarine
-                    </label>
-                    <label className="types-personalization__smartcard">
-                      <input type="radio" name="smartcard" value="mifare" />
-                      Mifare
-                    </label>
-                    <label className="types-personalization__smartcard">
-                      <input type="radio" name="smartcard" value="icode" />
-                      Icode
-                    </label>
-                  </div>
-                </div>
-                {/* <label className="types-personalization__layout">
-              <input type="file" className="types-personalization__file-input" name="maket" id="card-maket"/>
-              <span>Загрузить макет...</span>
-            </label> */}
-              </div>
+              <TypesOfPersonalization />
               <textarea
                 className="types-personalization__text-user"
                 name="text-user"

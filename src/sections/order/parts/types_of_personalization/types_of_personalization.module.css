@@ -1,0 +1,134 @@
+.root {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.inner {
+  width: 146px;
+  padding-top: 90px;
+  padding-left: 30px;
+  padding-right: 10px;
+  position: relative;
+}
+.inner::after {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 70px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-72%);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.hico::after {
+  background-image: url("./img/hico.jpg");
+}
+
+.barcode::after {
+  background-image: url("./img/barcode1.jpg");
+}
+
+.scratch::after {
+  background-image: url("./img/scratchstrip.jpg");
+}
+
+.emboss::after {
+  background-image: url("./img/emboussr31.jpg");
+}
+
+.signatureBand::after {
+  background-image: url("./img/signaturestrip.jpg");
+}
+
+.variableNumbering::after {
+  background-image: url("./img/embossr31.jpg");
+}
+
+.sublimation::after {
+  background-image: url("./img/barcode15.jpg");
+}
+
+.indent::after {
+  background-image: url("./img/indent.jpg");
+}
+
+.label {
+  color: #000000;
+  font-size: 18px;
+  line-height: 1;
+  font-weight: 400;
+  position: relative;
+  display: block;
+  text-align: left;
+  cursor: pointer;
+}
+.label:hover,
+.label:focus {
+  font-weight: bold;
+}
+
+.label::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: solid 2px #afafaf;
+  background-color: #ffffff;
+  left: -30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.input:checked ~ .label::after {
+  content: "";
+  display: block;
+  position: absolute;
+  width: 4px;
+  height: 10px;
+  border: solid 2px black;
+  border-top-color: transparent;
+  border-left-color: transparent;
+  left: -24px;
+  top: 50%;
+  transform: translateY(-60%) rotate(45deg);
+}
+
+.input {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
+
+.wrapper {
+  width: 220px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.smartCard {
+  width: 110px;
+  line-height: 18px;
+  color: #000000;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+
+.smartCard:hover {
+  font-weight: bold;
+}
+
+.title {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 22px;
+}

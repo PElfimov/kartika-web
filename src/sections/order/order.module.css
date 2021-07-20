@@ -1,7 +1,7 @@
 .root {
   background-color: var(--blue);
   color: var(--whitebase);
-  background-image: url("./img/bg-triangl2.svg"), url("./img/bg-triangl.svg");
+  background-image: url("./parts/img/bg-triangl2.svg"), url("./parts/img/bg-triangl.svg");
   background-position: top -1px left, bottom -1px left;
   background-repeat: no-repeat;
   background-size: contain;
@@ -162,7 +162,7 @@
   color: #000000;
 }
 
-.leave-request-form__text {
+.formText {
   margin: 0;
   color: #ffffff;
   font-size: 18px;
@@ -170,19 +170,20 @@
   font-weight: 400;
 }
 
-.leave-request-form__check-box {
+.checkBox {
   line-height: 18px;
   color: #000000;
   font-size: 18px;
   font-weight: 400;
   margin-top: 10px;
   cursor: pointer;
-  &:hover {
-    font-weight: bold;
-  }
 }
 
-.leave-request-form__title2 {
+.checkBox:hover {
+  font-weight: bold;
+}
+
+.title2 {
   line-height: 43px;
   color: #ffffff;
   font-size: 36px;
@@ -192,7 +193,7 @@
   margin: 38px 0 0;
 }
 
-.leave-request-form__legend {
+.legend {
   text-align: center;
   margin: 0;
 }
