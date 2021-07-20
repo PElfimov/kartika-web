@@ -3,6 +3,7 @@ import styles from "./order.module.css"
 import {Textarea} from "./parts/textarea"
 import {TypesOfPersonalization} from "./parts/types_of_personalization"
 import {PersonalDataPolicy} from "./parts/personal_data_policy/personal_data_policy"
+import {Button} from "./parts/button"
 
 interface Props {}
 export class Order extends Component<Props, {}> {
@@ -80,7 +81,7 @@ export class Order extends Component<Props, {}> {
               <TypesOfPersonalization />
               <Textarea />
               <PersonalDataPolicy />
-              <input className="btn btn--leave-request-form" type="submit" value="Расчитать стоимость " />
+              <Button />
             </fieldset>
           </form>
         </div>
