@@ -1,0 +1,13 @@
+.root {
+  background-color: #c8c8c8;
+  padding: 10px;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.privacypolicy {
+  text-align: center;
+}

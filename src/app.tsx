@@ -12,6 +12,7 @@ import {Reviews} from "./sections/reviews"
 import {Faq} from "./sections/faq"
 import {Manufacture} from "./sections/manufacture"
 import {Order} from "./sections/order"
+import {Footer} from "./sections/footer"
 
 const App = () => {
   return (
@@ -30,6 +31,7 @@ const App = () => {
         <Faq />
         <Manufacture />
         <Order />
+        <Footer />
       </main>
     </>
   )
