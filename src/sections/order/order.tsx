@@ -1,6 +1,8 @@
 import {Component} from "react"
 import styles from "./order.module.css"
+import {Textarea} from "./parts/textarea"
 import {TypesOfPersonalization} from "./parts/types_of_personalization"
+import {PersonalDataPolicy} from "./parts/personal_data_policy/personal_data_policy"
 
 interface Props {}
 export class Order extends Component<Props, {}> {
@@ -76,38 +78,8 @@ export class Order extends Component<Props, {}> {
                 <h3 className={styles.title2}>Виды персонализации:</h3>
               </legend>
               <TypesOfPersonalization />
-              <textarea
-                className="types-personalization__text-user"
-                name="text-user"
-                id="types-personalization-text-user"
-                rows={8}
-                cols={80}
-                placeholder="Коментарий к заказу"></textarea>
-              <input
-                className="leave-request-main__checkbox-input"
-                type="checkbox"
-                name="check-politik"
-                value="enabled"
-                id="leave-request-main__checkbox-input"
-                required
-              />
-              <label className="leave-request-main__checkbox" htmlFor="leave-request-main__checkbox-input">
-                <p className="leave-request-main__text leave-request-main__text--checkbox">
-                  Я соглашаюсь на передачу персональных данных согласно
-                  <a
-                    className="leave-request-main__text leave-request-main__text--link"
-                    href="https://152фз.рф/get_terms/e7891dca8b038199ca96b7c656d599f9">
-                    пользовательскому соглашению
-                  </a>
-                  и
-                  <a
-                    className="leave-request-main__text leave-request-main__text--link"
-                    href="https://152фз.рф/get_prv/e7891dca8b038199ca96b7c656d599f9">
-                    политике конфиденциальности
-                  </a>
-                  данного сайта
-                </p>
-              </label>
+              <Textarea />
+              <PersonalDataPolicy />
               <input className="btn btn--leave-request-form" type="submit" value="Расчитать стоимость " />
             </fieldset>
           </form>
