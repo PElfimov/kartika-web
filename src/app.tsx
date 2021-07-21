@@ -13,6 +13,7 @@ import {Faq} from "./sections/faq"
 import {Manufacture} from "./sections/manufacture"
 import {Order} from "./sections/order"
 import {Footer} from "./sections/footer"
+import {Contacts} from "./sections/contacts"
 
 const App = () => {
   return (
@@ -31,6 +32,7 @@ const App = () => {
         <Faq />
         <Manufacture />
         <Order />
+        <Contacts />
         <Footer />
       </main>
     </>
