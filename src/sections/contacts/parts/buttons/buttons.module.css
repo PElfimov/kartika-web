@@ -12,47 +12,55 @@
   font-weight: 700;
 }
 
-.cocial-btn__list {
+.list {
   display: flex;
 }
 
-/* .cocial-btn__item {
+.item {
   list-style: none;
   margin: 0 10px;
   position: relative;
-  & a {
-    display: block;
-    width: 30px;
-    height: 30px;
-    background-repeat: no-repeat;
-    background-image: url("../img/spritesheet.png");
-    border-radius: 5px;
-  }
-  &--fb a {
-    background-position: -300px -57px;
-  }
-
-  &--vk a {
-    background-position: -284px -323px;
-  }
-
-  &--ok a {
-    background-position: -327px -225px;
-  }
-
-  &--insta a {
-    background-position: -11px -181px;
-  }
-
-  &:hover a {
-    transform: scale(1.1);
-  }
-
-  &:active a {
-    transform: scale(1.1) translateY(2px);
-  }
 }
 
-.cocial-btn__visually-hidden {
-  .visuali-hidden;
-} */
+.item a {
+  display: block;
+  width: 30px;
+  height: 30px;
+  background-repeat: no-repeat;
+  background-image: url("./img/spritesheet.png");
+  border-radius: 5px;
+}
+.fb a {
+  background-position: -300px -57px;
+}
+
+.vk a {
+  background-position: -284px -323px;
+}
+
+.ok a {
+  background-position: -327px -225px;
+}
+
+.insta a {
+  background-position: -11px -181px;
+}
+
+.item:hover a {
+  transform: scale(1.1);
+}
+
+.item:active a {
+  transform: scale(1.1) translateY(2px);
+}
+
+.hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
