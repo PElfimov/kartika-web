@@ -4,7 +4,6 @@ import styles from "./footer.module.css"
 interface Props {}
 export class Footer extends Component<Props, {}> {
   render() {
-    politic()
     return (
       <footer className={styles.root}>
         <div className={styles.wrapper}>
@@ -29,14 +28,4 @@ export class Footer extends Component<Props, {}> {
       </footer>
     )
   }
-}
-
-function politic() {
-  const script = document.createElement("script")
-  script.type = "text/javascript"
-  script.async = true
-  script.charset = "utf-8"
-  script.src = "https://152фз.рф/widget/e7891dca8b038199ca96b7c656d599f9"
-  document.getElementsByTagName("head")[0].appendChild(script)
-  console.log(script)
 }
