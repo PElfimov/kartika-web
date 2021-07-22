@@ -9,11 +9,11 @@ export class PromoPage extends Component<Props, {}> {
 
   render() {
     return (
-      <section className={styles.root}>
+      <section className={styles.root} id="promo-page">
         <div>
           <div className={styles.title}>
             <h2 className={styles.textHidden}>Специальная акция типографии "Картика"</h2>
-            <b id="promo-page">Только 3 дня!</b>
+            <b>Только 3 дня!</b>
             <p>
               при заказе карт вы получите дизайн-макет<span>в подарок</span>
             </p>
