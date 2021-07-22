@@ -1,6 +1,7 @@
 import {observer} from "mobx-react"
 import {makeObservable, observable, computed, action} from "mobx"
 import {Component} from "react"
+import {animateScroll as scroll} from "react-scroll"
 import styles from "./nav.module.css"
 
 type Item = {name: string; text: string; position: number}
@@ -8,12 +9,12 @@ type Item = {name: string; text: string; position: number}
 interface Props {}
 
 const item: Item[] = [
-  {name: `promo`, text: `Акция`, position: 50},
-  {name: `portfolio`, text: `Портфолио`, position: 50},
-  {name: `catalog`, text: `Типы продукции`, position: 50},
-  {name: `advantages`, text: `Преимущества`, position: 50},
-  {name: `reviews`, text: `Отзывы`, position: 50},
-  {name: `request`, text: `Заявка на расчет`, position: 50}
+  {name: `promo`, text: `Акция`, position: 683},
+  {name: `portfolio`, text: `Портфолио`, position: 3253},
+  {name: `catalog`, text: `Типы продукции`, position: 1983},
+  {name: `advantages`, text: `Преимущества`, position: 1283},
+  {name: `reviews`, text: `Отзывы`, position: 3960},
+  {name: `request`, text: `Заявка на расчет`, position: 7188}
 ]
 
 @observer
@@ -36,30 +37,30 @@ export class Nav extends Component<Props, {}> {
     return style
   }
 
+  scrollTo(offset: number) {
+    scroll.scrollTo(offset, {delay: 5, smooth: true})
+  }
+
   render() {
     return (
       <nav className={`${styles.root} ${this.positionStyle}`}>
         <div className={styles.inner}>
           <h3 className={styles.textHidden}>Меню нашего сайта</h3>
           <ul className={styles.list}>
-            <li className={styles.item}>
-              <a href="#promo-page">Акция</a>
-            </li>
-            <li className={styles.item}>
-              <a href="#portfolio">Портфолио</a>
-            </li>
-            <li className={styles.item}>
-              <a href="#catalog">Типы продукции</a>
-            </li>
-            <li className={styles.item}>
-              <a href="#advantages">Преимущества</a>
-            </li>
-            <li className={styles.item}>
-              <a href="#reviews">Отзывы</a>
-            </li>
-            <li className={styles.item}>
-              <a href="#request-for-settleme">Заявка на расчет</a>
-            </li>
+            {item.map((item, index) => {
+              return (
+                <li key={`${item.name}-${index}`} className={styles.item}>
+                  <a
+                    onClick={(event) => {
+                      event.preventDefault()
+                      event.stopPropagation()
+                      this.scrollTo(item.position)
+                    }}>
+                    {item.text}
+                  </a>
+                </li>
+              )
+            })}
           </ul>
         </div>
       </nav>

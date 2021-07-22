@@ -55,6 +55,7 @@
   padding: 10px;
   display: block;
   outline-color: #002dd0;
+  cursor: pointer;
 }
 
 .item a:hover {
