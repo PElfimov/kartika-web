@@ -1,11 +1,33 @@
+import {observer} from "mobx-react"
+import {makeObservable, observable, computed, action} from "mobx"
 import {Component} from "react"
 import styles from "./nav.module.css"
 
 interface Props {}
+
+@observer
 export class Nav extends Component<Props, {}> {
+  @observable
+  private fixedPosition: boolean = false
+
+  constructor(props: any) {
+    super(props)
+    makeObservable(this)
+  }
+
+  @computed
+  private get positionStyle() {
+    let style: string = ` `
+    if (this.fixedPosition) {
+      style = styles.fixed
+    }
+
+    return style
+  }
+
   render() {
     return (
-      <nav className={styles.root}>
+      <nav className={`${styles.root} ${this.positionStyle}`}>
         <div className={styles.inner}>
           <h3 className={styles.textHidden}>Меню нашего сайта</h3>
           <ul className={styles.list}>
@@ -32,14 +54,19 @@ export class Nav extends Component<Props, {}> {
       </nav>
     )
   }
-}
 
-// jQuery(window).scroll(function() {
-//   var the_top = jQuery(document).scrollTop();
-//   if (the_top > 667) {
-//       jQuery('.main-navigation').addClass('main-navigation--fixed');
-//   }
-//   else {
-//       jQuery('.main-navigation').removeClass('main-navigation--fixed');
-//   }
-// });
+  componentDidMount() {
+    window.addEventListener("scroll", this.handleScroll)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener("scroll", this.handleScroll)
+  }
+
+  @action
+  handleScroll = () => {
+    if (window.scrollY > 667) {
+      this.fixedPosition = true
+    } else this.fixedPosition = false
+  }
+}
