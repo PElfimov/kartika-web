@@ -1,4 +1,5 @@
 import {Component} from "react"
+import {Popup} from "../popup"
 import styles from "./footer.module.css"
 
 interface Props {}
@@ -6,6 +7,7 @@ export class Footer extends Component<Props, {}> {
   render() {
     return (
       <footer className={styles.root}>
+        <Popup />
         <div className={styles.wrapper}>
           <div>
             <a>
