@@ -1,4 +1,3 @@
-import styles from "./app.module.css"
 import {CapturePage} from "./sections/capture_page"
 import {Catalog} from "./sections/catalog"
 import {FreeCardForm} from "./sections/free_card_form"
@@ -19,7 +18,7 @@ const App = () => {
   return (
     <>
       <Header />
-      <main className={styles.main}>
+      <main>
         <CapturePage />
         <Nav />
         <PromoPage />

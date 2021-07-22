@@ -1,0 +1,42 @@
+:root {
+  --whitebase: #ffffff;
+
+  --blue: #00a9d9;
+
+  --yellow: #ffed00;
+
+  --red: #d22856;
+}
+
+body,
+html {
+  margin: 0;
+  font-family: "Open Sans", "Gilroy", "Arial", sans-serif;
+  font-size: 14px;
+  line-height: 30px;
+  font-size: 15px;
+  line-height: 30px;
+  color: #444444;
+  font-weight: normal;
+  scroll-behavior: smooth;
+}
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 101; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.7); /* Black w/ opacity */
+  justify-content: center;
+  align-items: center;
+}
