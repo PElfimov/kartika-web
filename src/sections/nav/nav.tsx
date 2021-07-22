@@ -38,7 +38,9 @@ export class Nav extends Component<Props, {}> {
   }
 
   scrollTo(offset: number) {
-    scroll.scrollTo(offset, {delay: 5, smooth: true})
+    scroll.scrollTo(offset, {
+      duration: 5
+    })
   }
 
   render() {
