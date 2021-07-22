@@ -3,7 +3,18 @@ import {makeObservable, observable, computed, action} from "mobx"
 import {Component} from "react"
 import styles from "./nav.module.css"
 
+type Item = {name: string; text: string; position: number}
+
 interface Props {}
+
+const item: Item[] = [
+  {name: `promo`, text: `Акция`, position: 50},
+  {name: `portfolio`, text: `Портфолио`, position: 50},
+  {name: `catalog`, text: `Типы продукции`, position: 50},
+  {name: `advantages`, text: `Преимущества`, position: 50},
+  {name: `reviews`, text: `Отзывы`, position: 50},
+  {name: `request`, text: `Заявка на расчет`, position: 50}
+]
 
 @observer
 export class Nav extends Component<Props, {}> {
