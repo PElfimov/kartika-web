@@ -19,11 +19,13 @@ export class Thanks extends Component<Props, {}> {
   public render() {
     let html = (
       <section className={styles.root}>
-        <Close
-          onClick={() => {
-            console.log(`click to close`)
-          }}
-        />
+        <div className={styles.close}>
+          <Close
+            onClick={() => {
+              console.log(`click to close`)
+            }}
+          />
+        </div>
         <h2 className={styles.title}>Спасибо!</h2>
         <p className={styles.text}>Ваша заявка принята!</p>
         <p className={styles.text}>Специалист компании свяжется с Вами в течение 20 минут.</p>

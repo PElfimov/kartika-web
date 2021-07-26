@@ -1,9 +1,6 @@
 .root {
-  position: absolute;
   background-color: transparent;
   border-color: transparent;
-  top: 5px;
-  right: 5px;
   cursor: pointer;
 }
 
