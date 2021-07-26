@@ -1,13 +1,11 @@
 import {Component} from "react"
 import ReactDOM from "react-dom"
 
-import styles from "./popup.module.css"
+import styles from "./thanks.module.css"
 
 interface Props {}
 
-type TabKey = "Existing User" | "Invite User"
-
-export class Popup extends Component<Props, {}> {
+export class Thanks extends Component<Props, {}> {
   private element = document.getElementById("appModal")
 
   public componentDidMount() {

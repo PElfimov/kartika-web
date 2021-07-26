@@ -1,13 +1,14 @@
 import {Component} from "react"
-import {Popup} from "../../components/popups/popup"
+
 import styles from "./footer.module.css"
+import {Thanks} from "../../components/popups/thanks"
 
 interface Props {}
 export class Footer extends Component<Props, {}> {
   render() {
     return (
       <footer className={styles.root}>
-        <Popup />
+        <Thanks />
         <div className={styles.wrapper}>
           <div>
             <a>
