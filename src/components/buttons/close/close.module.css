@@ -1,0 +1,26 @@
+.root {
+  position: absolute;
+  background-color: transparent;
+  border-color: transparent;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}
+
+.root svg {
+  width: 30px;
+  height: 30px;
+  stroke: black;
+  fill: white;
+}
+
+.root:hover svg,
+.root:focus svg {
+  fill: var(--blue, blue);
+  stroke: var(--blue, blue);
+}
+
+.root:active svg {
+  fill: #48d6fd;
+  stroke: #48d6fd;
+}
