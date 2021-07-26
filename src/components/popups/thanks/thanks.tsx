@@ -2,6 +2,7 @@ import {Component} from "react"
 import ReactDOM from "react-dom"
 import {Close} from "../../buttons/close"
 import styles from "./thanks.module.css"
+import {Button} from "../../buttons/button"
 
 interface Props {}
 
@@ -29,9 +30,12 @@ export class Thanks extends Component<Props, {}> {
         <h2 className={styles.title}>Спасибо!</h2>
         <p className={styles.text}>Ваша заявка принята!</p>
         <p className={styles.text}>Специалист компании свяжется с Вами в течение 20 минут.</p>
-        <button className="btn btn--thanks-call" type="button">
-          Закрыть
-        </button>
+        <Button
+          text={`Закрыть`}
+          onClick={() => {
+            console.log(`click to close`)
+          }}
+        />
       </section>
     )
 
