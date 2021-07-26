@@ -1,5 +1,5 @@
 import {Component} from "react"
-import {Popup} from "../popup"
+import {Popup} from "../../components/popups/popup"
 import styles from "./footer.module.css"
 
 interface Props {}
