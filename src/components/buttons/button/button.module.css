@@ -1,9 +1,7 @@
 .root {
   width: 245px;
   height: 58px;
-  margin: 13px 0 0;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0;
   border-radius: 74px;
   border: solid 3px white;
   background: linear-gradient(to top, #f49b1f, #fbe721);
@@ -11,7 +9,6 @@
   text-transform: uppercase;
   font-weight: bold;
   font-size: 19px;
-  margin-bottom: 20px;
   box-shadow: 0 0 7px #666;
 }
 

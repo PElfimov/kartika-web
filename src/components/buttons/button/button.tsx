@@ -4,6 +4,7 @@ import styles from "./button.module.css"
 interface Props {
   onClick: (e?: any) => void
   text: string
+  disabled?: boolean
 }
 
 export class Button extends Component<Props, {}> {
@@ -13,10 +14,12 @@ export class Button extends Component<Props, {}> {
     event.stopPropagation()
     onClick(event)
   }
+
   render() {
-    const {text} = this.props
+    const {text, disabled} = this.props
+
     return (
-      <button className={styles.root} type="button" onClick={this.onClick.bind(this)}>
+      <button className={styles.root} disabled={disabled} type="button" onClick={this.onClick.bind(this)}>
         {text}
       </button>
     )
