@@ -2,6 +2,7 @@ import {Component} from "react"
 import logo from "./parts/img/karticalogo.png"
 import styles from "./header.module.css"
 import {Btn} from "./parts/btn/btn"
+import {RequestACall} from "../../components/popups/request_a_call/request_a_call"
 
 interface Props {}
 export class Header extends Component<Props, {}> {
@@ -9,6 +10,7 @@ export class Header extends Component<Props, {}> {
     return (
       <header>
         <div className={styles.inner}>
+          <RequestACall />
           <section className={styles.logo}>
             <h1>
               <span className={styles.logoText}>
