@@ -28,7 +28,7 @@ export class Header extends Component<Props, {}> {
             </p>
             <p className={styles.contactText}>Ждем ваших звонков!</p>
             <p>
-              <Btn />
+              <Btn onClick={() => {}} />
             </p>
           </section>
         </div>

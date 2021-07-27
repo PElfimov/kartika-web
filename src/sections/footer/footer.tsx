@@ -8,7 +8,6 @@ export class Footer extends Component<Props, {}> {
   render() {
     return (
       <footer className={styles.root}>
-        <Thanks />
         <div className={styles.wrapper}>
           <div>
             <a>

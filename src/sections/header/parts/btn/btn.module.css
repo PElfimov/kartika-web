@@ -1,16 +1,23 @@
 .btn {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   border: #52a4d0 solid 4px;
   border-radius: 23px;
   text-decoration: none;
   color: #00a3d0;
   width: 204px;
-  height: 33px;
+  height: 41px;
   margin-top: 12px;
   margin-left: auto;
   text-align: center;
   font-family: inherit;
   text-transform: uppercase;
+  background-color: transparent;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
 .btn:hover {
