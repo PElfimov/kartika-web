@@ -30,12 +30,14 @@ export class Thanks extends Component<Props, {}> {
         <h2 className={styles.title}>Спасибо!</h2>
         <p className={styles.text}>Ваша заявка принята!</p>
         <p className={styles.text}>Специалист компании свяжется с Вами в течение 20 минут.</p>
-        <Button
-          text={`Закрыть`}
-          onClick={() => {
-            console.log(`click to close`)
-          }}
-        />
+        <div className={styles.button}>
+          <Button
+            text={`Закрыть`}
+            onClick={() => {
+              console.log(`click to close`)
+            }}
+          />
+        </div>
       </section>
     )
 
