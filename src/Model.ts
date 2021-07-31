@@ -18,7 +18,10 @@ export class Model {
   @action.bound
   public getUserPhone(event) {
     const text = event.target.value
-    this.user.tel = text
+    let num = Number(text)
+    if (Number.isInteger(num)) {
+      this.user.tel = text
+    }
   }
 
   @action.bound
