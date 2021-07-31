@@ -16,7 +16,7 @@ export class Header extends Component<Props, {}> {
   }
 
   @observable
-  private popupIsVisible: boolean = false
+  private popupIsVisible: boolean = true
 
   @action.bound
   onClickOpen() {
