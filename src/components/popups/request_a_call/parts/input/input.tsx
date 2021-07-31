@@ -17,7 +17,6 @@ export function Input({placeholder, disabled, type, value = `text`, onChange, re
   if (error) {
     style = style.concat(styles.error)
   }
-  console.log(error)
 
   return (
     <div className={`${styles.root} ${styles[type]} `}>
