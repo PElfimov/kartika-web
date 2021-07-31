@@ -4,6 +4,7 @@ import {Close} from "../../buttons/close"
 import styles from "./request_a_call.module.css"
 import {Button} from "../../buttons/button"
 import {Input} from "./parts/input"
+import {SecurityPolitics} from "./parts/security_politics"
 
 interface Props {
   onClick: (e?: any) => void
@@ -40,30 +41,7 @@ export class RequestACall extends Component<Props, {}> {
             <Input placeholder="Номер телефона" value="" onChange={() => {}} type="phone" />
             <Input placeholder="Электронная почта" value="" onChange={() => {}} type="mail" />
           </fieldset>
-          <input
-            className="request-call__checkbox-input"
-            type="checkbox"
-            value="enabled"
-            id="request-call__checkbox"
-            required={true}
-          />
-          <label className={styles.checkbox} htmlFor="request-call__checkbox">
-            <p className={`${styles.text} ${styles.checkboxText}`}>
-              Я соглашаюсь на передачу персональных данных согласно {` `}
-              <a
-                className={`${styles.text} ${styles.link}`}
-                href="https://152фз.рф/get_terms/e7891dca8b038199ca96b7c656d599f9">
-                пользовательскому соглашению
-              </a>{" "}
-              и{` `}
-              <a
-                className={`${styles.text} ${styles.link}`}
-                href="https://152фз.рф/get_prv/e7891dca8b038199ca96b7c656d599f9">
-                политике конфиденциальности данного сайта
-              </a>
-            </p>
-          </label>
-
+          <SecurityPolitics checked={false} onChange={() => {}} />
           <div className={styles.button}>
             <Button type={`submit`} text={`Закрыть`} onClick={() => {}} />
           </div>

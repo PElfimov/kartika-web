@@ -14,6 +14,7 @@
 
 .input:focus,
 .input:hover {
+  outline: none;
   transition: 0.2s;
   transform: scale(1.03);
   border-color: var(--blue, blue);

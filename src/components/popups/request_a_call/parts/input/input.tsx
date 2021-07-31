@@ -10,10 +10,17 @@ interface Props {
   onChange: (e?: any) => void
 }
 
-export function Input({placeholder, disabled, type = `text`, onChange}: Props) {
+export function Input({placeholder, disabled, type, value = `text`, onChange}: Props) {
   return (
     <div className={`${styles.root} ${styles[type]}`}>
-      <input type={type} placeholder={placeholder} className={styles.input} disabled={disabled} onChange={onChange} />
+      <input
+        type={type}
+        placeholder={placeholder}
+        value={value}
+        className={styles.input}
+        disabled={disabled}
+        onChange={onChange}
+      />
     </div>
   )
 }
