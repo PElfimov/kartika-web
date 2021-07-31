@@ -5,11 +5,15 @@ import styles from "./request_a_call.module.css"
 import {Button} from "../../buttons/button"
 import {Input} from "./parts/input"
 import {SecurityPolitics} from "./parts/security_politics"
+import {Model} from "../../../Model"
+import {observer} from "mobx-react"
 
 interface Props {
   onClick: (e?: any) => void
+  model: Model
 }
 
+@observer
 export class RequestACall extends Component<Props, {}> {
   private element = document.getElementById("appModal")
 
@@ -27,7 +31,7 @@ export class RequestACall extends Component<Props, {}> {
   }
 
   public render() {
-    const {onClick} = this.props
+    const {onClick, model} = this.props
     let html = (
       <section className={styles.root}>
         <div className={styles.close}>
@@ -37,11 +41,29 @@ export class RequestACall extends Component<Props, {}> {
         <p className={styles.text}>Специалист нашей компании свяжется с вами, чтобы ответить на ваши вопросы!</p>
         <form className={styles.form} onSubmit={this.handleSubmit}>
           <fieldset className={styles.inputs}>
-            <Input placeholder="Ваше имя" value="" onChange={() => {}} type="text" />
-            <Input placeholder="Номер телефона" value="" onChange={() => {}} type="phone" />
-            <Input placeholder="Электронная почта" value="" onChange={() => {}} type="mail" />
+            <Input
+              placeholder="Ваше имя"
+              value={model.user.name}
+              onChange={model.getUserName}
+              type="text"
+              required={true}
+            />
+            <Input
+              placeholder="Номер телефона"
+              value={model.user.tel}
+              onChange={model.getUserPhone}
+              type="phone"
+              required={true}
+            />
+            <Input
+              placeholder="Электронная почта"
+              value={model.user.mail}
+              onChange={model.getUserMail}
+              type="mail"
+              required={true}
+            />
           </fieldset>
-          <SecurityPolitics checked={false} onChange={() => {}} />
+          <SecurityPolitics checked={model.user.securityPolitics} onChange={model.getSecurityPolitics} />
           <div className={styles.button}>
             <Button type={`submit`} text={`Закрыть`} onClick={() => {}} />
           </div>
