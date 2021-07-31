@@ -4,7 +4,9 @@ import {Close} from "../../buttons/close"
 import styles from "./request_a_call.module.css"
 import {Button} from "../../buttons/button"
 
-interface Props {}
+interface Props {
+  onClick: (e?: any) => void
+}
 
 export class RequestACall extends Component<Props, {}> {
   private element = document.getElementById("appModal")
@@ -18,23 +20,15 @@ export class RequestACall extends Component<Props, {}> {
   }
 
   public render() {
+    const {onClick} = this.props
     let html = (
       <section className={styles.root}>
         <div className={styles.close}>
-          <Close
-            onClick={() => {
-              console.log(`click to close`)
-            }}
-          />
+          <Close onClick={onClick} />
         </div>
 
         <div className={styles.button}>
-          <Button
-            text={`Закрыть`}
-            onClick={() => {
-              console.log(`click to close`)
-            }}
-          />
+          <Button text={`Закрыть`} onClick={onClick} />
         </div>
       </section>
     )

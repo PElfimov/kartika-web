@@ -3,14 +3,36 @@ import logo from "./parts/img/karticalogo.png"
 import styles from "./header.module.css"
 import {Btn} from "./parts/btn/btn"
 import {RequestACall} from "../../components/popups/request_a_call/request_a_call"
+import {observer} from "mobx-react"
+import {action, makeObservable, observable} from "mobx"
 
 interface Props {}
+
+@observer
 export class Header extends Component<Props, {}> {
+  constructor(props: any) {
+    super(props)
+    makeObservable(this)
+  }
+
+  @observable
+  private popupIsVisible: boolean = false
+
+  @action.bound
+  onClickOpen() {
+    this.popupIsVisible = true
+  }
+
+  @action.bound
+  onClickClose() {
+    this.popupIsVisible = false
+  }
+
   render() {
     return (
       <header>
         <div className={styles.inner}>
-          <RequestACall />
+          {this.popupIsVisible && <RequestACall onClick={this.onClickClose} />}
           <section className={styles.logo}>
             <h1>
               <span className={styles.logoText}>
@@ -30,7 +52,7 @@ export class Header extends Component<Props, {}> {
             </p>
             <p className={styles.contactText}>Ждем ваших звонков!</p>
             <p>
-              <Btn onClick={() => {}} />
+              <Btn onClick={this.onClickOpen} />
             </p>
           </section>
         </div>
