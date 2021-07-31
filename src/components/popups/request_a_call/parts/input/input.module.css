@@ -1,0 +1,66 @@
+.input {
+  width: 300px;
+  margin: 10px 0;
+  border-radius: 50px;
+  height: 50px;
+  padding-left: 60px;
+  border: solid 1px #666;
+  color: #505055;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 700;
+  box-shadow: 0 0 7px #666;
+}
+
+.input:focus,
+.input:hover {
+  transition: 0.2s;
+  transform: scale(1.03);
+  border-color: var(--blue, blue);
+}
+
+.input::placeholder {
+  color: #505055;
+  font-size: 17px;
+  line-height: 17px;
+  font-weight: 700;
+}
+
+.root {
+  position: relative;
+}
+
+.root::after {
+  content: "";
+  display: block;
+  position: absolute;
+  background-image: url("./img/spritesheet.png");
+  background-repeat: no-repeat;
+  z-index: 10;
+  left: 20px;
+}
+
+.text::after {
+  width: 35px;
+  height: 35px;
+  background-position: -57px -97px;
+  top: 21px;
+  left: 19px;
+}
+
+.phone::after {
+  width: 35px;
+  height: 35px;
+  background-position: -57px -195px;
+  top: 21px;
+  left: 19x;
+}
+
+.mail::after {
+  width: 30px;
+  height: 30px;
+  background-image: url("./img/email.svg");
+  background-size: cover;
+  top: 21px;
+  left: 19px;
+}
