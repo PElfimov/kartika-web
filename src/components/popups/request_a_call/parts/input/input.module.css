@@ -20,6 +20,12 @@
   border-color: var(--blue, blue);
 }
 
+.error,
+.error:focus,
+.error:hover {
+  border-color: var(--red, red);
+}
+
 .input::placeholder {
   color: #505055;
   font-size: 17px;

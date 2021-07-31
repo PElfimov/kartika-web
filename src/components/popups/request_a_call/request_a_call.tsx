@@ -47,6 +47,7 @@ export class RequestACall extends Component<Props, {}> {
               onChange={model.getUserName}
               type="text"
               required={true}
+              error={model.userError}
             />
             <Input
               placeholder="Номер телефона"
