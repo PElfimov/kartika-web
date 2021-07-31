@@ -1,6 +1,6 @@
 .input {
   width: 300px;
-  margin: 10px 0;
+  margin: 0;
   border-radius: 50px;
   height: 50px;
   padding-left: 60px;
@@ -38,22 +38,17 @@
   background-repeat: no-repeat;
   z-index: 10;
   left: 20px;
+  top: 10px;
+  width: 35px;
+  height: 35px;
 }
 
 .text::after {
-  width: 35px;
-  height: 35px;
   background-position: -57px -97px;
-  top: 21px;
-  left: 19px;
 }
 
 .phone::after {
-  width: 35px;
-  height: 35px;
   background-position: -57px -195px;
-  top: 21px;
-  left: 19x;
 }
 
 .mail::after {
@@ -61,6 +56,4 @@
   height: 30px;
   background-image: url("./img/email.svg");
   background-size: cover;
-  top: 21px;
-  left: 19px;
 }

@@ -32,11 +32,14 @@ export class RequestACall extends Component<Props, {}> {
         <div className={styles.close}>
           <Close onClick={onClick} />
         </div>
+        <h2 className={styles.title}>Оставить заявку</h2>
+        <p className={styles.text}>Специалист нашей компании свяжется с вами, чтобы ответить на ваши вопросы!</p>
         <form className={styles.form} onSubmit={this.handleSubmit}>
-          <Input placeholder="Ваше имя" value="" onChange={() => {}} type="text" />
-          <Input placeholder="Номер телефона" value="" onChange={() => {}} type="phone" />
-          <Input placeholder="Электронная почта" value="" onChange={() => {}} type="mail" />
-
+          <fieldset className={styles.inputs}>
+            <Input placeholder="Ваше имя" value="" onChange={() => {}} type="text" />
+            <Input placeholder="Номер телефона" value="" onChange={() => {}} type="phone" />
+            <Input placeholder="Электронная почта" value="" onChange={() => {}} type="mail" />
+          </fieldset>
           <input
             className="request-call__checkbox-input"
             type="checkbox"

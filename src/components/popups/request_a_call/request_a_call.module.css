@@ -35,19 +35,40 @@
   margin: 6px 0 0;
 }
 
+.text {
+  color: #505055;
+  font-size: 14px;
+  line-height: 14px;
+  text-align: center;
+  font-weight: 400;
+  margin: 22px 0 10px;
+}
+.form {
+  min-height: 162px;
+}
+.inputs {
+  padding: 0;
+  margin: 0;
+  margin-top: 20px;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  height: 200px;
+}
+
+.checkbox {
+  text-align: left;
+}
+.link:hover {
+  color: var(--red, red);
+}
+
 .close {
   position: absolute;
   top: 5px;
   right: 5px;
-}
-
-.text {
-  color: #505055;
-  font-size: 17px;
-  line-height: 17px;
-  text-align: center;
-  font-weight: 700;
-  margin: 22px 0 10px;
 }
 
 .button {
