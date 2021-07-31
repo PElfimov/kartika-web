@@ -1,4 +1,3 @@
-import {Component} from "react"
 import styles from "./button.module.css"
 
 interface Props {
@@ -7,21 +6,15 @@ interface Props {
   disabled?: boolean
 }
 
-export class Button extends Component<Props, {}> {
-  private onClick(event: any) {
-    const {onClick} = this.props
+export function Button({text, disabled, onClick}: Props) {
+  const onClickButton = (event: any) => {
     event.preventDefault()
     event.stopPropagation()
     onClick(event)
   }
-
-  render() {
-    const {text, disabled} = this.props
-
-    return (
-      <button className={styles.root} disabled={disabled} type="button" onClick={this.onClick.bind(this)}>
-        {text}
-      </button>
-    )
-  }
+  return (
+    <button className={styles.root} disabled={disabled} type="button" onClick={onClickButton}>
+      {text}
+    </button>
+  )
 }
