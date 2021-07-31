@@ -43,22 +43,21 @@ export class RequestACall extends Component<Props, {}> {
           <input
             className="request-call__checkbox-input"
             type="checkbox"
-            name="check-politik"
             value="enabled"
             id="request-call__checkbox"
             required={true}
           />
-          <label className="request-call__checkbox" htmlFor="request-call__checkbox">
-            <p className="request-call__text request-call__text--checkbox">
-              Я соглашаюсь на передачу персональных данных согласно
+          <label className={styles.checkbox} htmlFor="request-call__checkbox">
+            <p className={`${styles.text} ${styles.checkboxText}`}>
+              Я соглашаюсь на передачу персональных данных согласно {` `}
               <a
-                className="request-call__text request-call__text--link"
+                className={`${styles.text} ${styles.link}`}
                 href="https://152фз.рф/get_terms/e7891dca8b038199ca96b7c656d599f9">
                 пользовательскому соглашению
               </a>{" "}
-              и
+              и{` `}
               <a
-                className="request-call__text request-call__text--link"
+                className={`${styles.text} ${styles.link}`}
                 href="https://152фз.рф/get_prv/e7891dca8b038199ca96b7c656d599f9">
                 политике конфиденциальности данного сайта
               </a>
