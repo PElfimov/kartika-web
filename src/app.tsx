@@ -13,14 +13,11 @@ import {Manufacture} from "./sections/manufacture"
 import {Order} from "./sections/order"
 import {Footer} from "./sections/footer"
 import {Contacts} from "./sections/contacts"
-import {Model} from "./Model"
-
-const model = new Model()
 
 const App = () => {
   return (
     <>
-      <Header model={model} />
+      <Header />
       <main>
         <CapturePage />
         <Nav />

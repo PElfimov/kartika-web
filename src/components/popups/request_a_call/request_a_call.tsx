@@ -5,12 +5,11 @@ import styles from "./request_a_call.module.css"
 import {Button} from "../../buttons/button"
 import {Input} from "./parts/input"
 import {SecurityPolitics} from "./parts/security_politics"
-import {Model} from "../../../Model"
+import model from "../../../Model"
 import {observer} from "mobx-react"
 
 interface Props {
   onClick: (e?: any) => void
-  model: Model
 }
 
 @observer
@@ -25,13 +24,8 @@ export class RequestACall extends Component<Props, {}> {
     this.element!.style.display = "none"
   }
 
-  handleSubmit(event) {
-    alert("Отправленное имя:")
-    event.preventDefault()
-  }
-
   public render() {
-    const {onClick, model} = this.props
+    const {onClick} = this.props
     let html = (
       <section className={styles.root}>
         <div className={styles.close}>
@@ -39,7 +33,7 @@ export class RequestACall extends Component<Props, {}> {
         </div>
         <h2 className={styles.title}>Оставить заявку</h2>
         <p className={styles.text}>Специалист нашей компании свяжется с вами, чтобы ответить на ваши вопросы!</p>
-        <form className={styles.form} onSubmit={this.handleSubmit}>
+        <form className={styles.form}>
           <fieldset className={styles.inputs}>
             <Input
               placeholder="Ваше имя"
@@ -55,6 +49,7 @@ export class RequestACall extends Component<Props, {}> {
               onChange={model.getUserPhone}
               type="phone"
               required={true}
+              error={model.telError}
             />
             <Input
               placeholder="Электронная почта"
@@ -62,11 +57,17 @@ export class RequestACall extends Component<Props, {}> {
               onChange={model.getUserMail}
               type="mail"
               required={true}
+              error={model.mailError}
             />
           </fieldset>
+          {model.errorMessage && (
+            <div className={styles.errorMessage}>
+              <p>{model.errorMessage}</p>
+            </div>
+          )}
           <SecurityPolitics checked={model.user.securityPolitics} onChange={model.getSecurityPolitics} />
           <div className={styles.button}>
-            <Button type={`submit`} text={`Закрыть`} onClick={() => {}} />
+            <Button type={`submit`} text={`Закрыть`} onClick={model.submit} />
           </div>
         </form>
       </section>

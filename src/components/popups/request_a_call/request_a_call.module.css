@@ -70,3 +70,11 @@
   display: flex;
   justify-content: center;
 }
+
+.errorMessage {
+  color: var(--red, red);
+  font-size: 14px;
+  line-height: 14px;
+  font-weight: 400;
+  white-space: pre-line;
+}

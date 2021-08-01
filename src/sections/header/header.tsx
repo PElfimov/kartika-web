@@ -5,11 +5,8 @@ import {Btn} from "./parts/btn/btn"
 import {RequestACall} from "../../components/popups/request_a_call/request_a_call"
 import {observer} from "mobx-react"
 import {action, makeObservable, observable} from "mobx"
-import {Model} from "../../Model"
 
-interface Props {
-  model: Model
-}
+interface Props {}
 
 @observer
 export class Header extends Component<Props, {}> {
@@ -32,11 +29,10 @@ export class Header extends Component<Props, {}> {
   }
 
   render() {
-    const {model} = this.props
     return (
       <header>
         <div className={styles.inner}>
-          {this.popupIsVisible && <RequestACall model={model} onClick={this.onClickClose} />}
+          {this.popupIsVisible && <RequestACall onClick={this.onClickClose} />}
           <section className={styles.logo}>
             <h1>
               <span className={styles.logoText}>
