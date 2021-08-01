@@ -12,9 +12,6 @@ export class Model {
   @observable
   public isSubmit: boolean = false
 
-  @observable
-  public textError: string = ``
-
   @action.bound
   public submit(e) {
     e.preventDefault()
