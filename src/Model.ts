@@ -77,7 +77,7 @@ export class Model {
   @computed
   public get securityPoliticsError() {
     let error: boolean = false
-    if (this.user.securityPolitics && this.isSubmit) {
+    if (!this.user.securityPolitics && this.isSubmit) {
       error = true
     }
     return error
@@ -105,6 +105,8 @@ export class Model {
 
     return resultText
   }
+
+  // validation form
 }
 
 const model = new Model()

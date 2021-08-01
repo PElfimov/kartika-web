@@ -1,3 +1,4 @@
+import model from "../../../../../Model"
 import styles from "./security_politics.module.css"
 
 interface Props {
@@ -6,10 +7,15 @@ interface Props {
 }
 
 export function SecurityPolitics({onChange, checked}: Props) {
+  let checkboxStyles: string = `${styles.checkbox} `
+  if (model.securityPoliticsError) {
+    checkboxStyles = checkboxStyles.concat(styles.error)
+  }
+
   return (
     <label className={styles.root}>
       <input className={styles.input} type="checkbox" checked={checked} onChange={onChange} required={true} />
-      <div className={styles.checkbox} />
+      <div className={checkboxStyles} />
       <p className={styles.text}>
         Я соглашаюсь на передачу персональных данных согласно {` `}
         <a
