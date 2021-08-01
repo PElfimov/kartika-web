@@ -41,12 +41,6 @@ class BaseService {
     const response = await this.axios.put(url, data, config)
     return response
   }
-
-  async delete(url, params = {}) {
-    const config = this.setHeaderFromParams(params)
-    const response = await this.axios.delete(url, config)
-    return response
-  }
 }
 
 export default BaseService
