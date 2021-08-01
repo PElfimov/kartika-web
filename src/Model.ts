@@ -68,11 +68,18 @@ export class Model {
     let error: boolean = false
     const emailValid = this.user.mail.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)
     if (!emailValid && this.isSubmit) {
-      console.log("hhh")
-
       error = true
     }
 
+    return error
+  }
+
+  @computed
+  public get securityPoliticsError() {
+    let error: boolean = false
+    if (this.user.securityPolitics && this.isSubmit) {
+      error = true
+    }
     return error
   }
 
@@ -83,7 +90,9 @@ export class Model {
       `,
       tel: `Номер телефона должен содержать не меньше 10 символов только цифры.
       `,
-      mail: `Не верный формат электронной почты`
+      mail: `Не верный формат электронной почты
+      `,
+      securityPolitics: `Вы не согласились на передачу персональных данных`
     }
     let resultText: string = ""
 
